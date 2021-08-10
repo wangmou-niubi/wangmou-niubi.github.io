@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/10/Vue%E7%AC%94%E8%AE%B0/">Vue笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/10/Vue%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-08-10T07:28:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Vue.js是什么</strong></p>
+<p><strong>官方解释：</strong></p>
+<p>Vue (读音 /vjuː/，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Vue的使用</strong></p>
+<p>实例1：（基本的显示信息的方法以及 v-for 遍历）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map&quot;</span>&gt;</span>case1:王某 &#123;&#123;message&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span>case2:&#123;&#123;movies&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--v-for遍历--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in movies&quot;</span>&gt;</span>case3: &#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--此处自动解析特殊语法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 编程范式:声明式编程</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 只需声明显示什么东西</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(</span></span><br><span class="line"><span class="javascript">       <span class="comment">//此处为options属性</span></span></span><br><span class="line">        &#123;</span><br><span class="line"><span class="javascript">        el: <span class="string">&#x27;#map&#x27;</span>,<span class="comment">//用于挂载要管理的元素</span></span></span><br><span class="line"><span class="javascript">        data: &#123;<span class="comment">//定义数据</span></span></span><br><span class="line"><span class="javascript">            message: <span class="string">&quot;好得很！&quot;</span>,</span></span><br><span class="line"><span class="javascript">            movies: [<span class="string">&#x27;王某牛逼？&#x27;</span>,<span class="string">&#x27;王某非常牛逼！&#x27;</span>]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 原生js（ 编程范式：命令式编程）</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 1.创建div元素,设置id属性</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 2.定义一个变量message</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 3.将message变量在div元素中显示</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../../AppData/Roaming/Typora/typora-user-images/image-20210810153712296.png" alt="image-20210810153712296"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/10/Vue%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2021-3-7-5：08-我终于克服种种困难，成功发表了我的第一篇博文，虽然不知道是否有用，但是能看见自己一步一步建立的网站还是感觉自己很骄傲，希望我的博文在日后能得到别人的赏识。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
