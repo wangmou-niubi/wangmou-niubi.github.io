@@ -15,46 +15,46 @@
 <meta property="og:site_name" content="犯罪嫌疑人王某">
 <meta property="og:description" content="IOC底层原理：（1）xml解析 、工厂模式 、 反射 1.BeanFactory1234&#x2F;&#x2F;XmlBeanFactory是典型的BeanFactory。 BeanFactory factory &#x3D; new XmlBeanFactory(&quot;XXX.xml&quot;); &#x2F;&#x2F;获取一个叫做mdzz的bean。在这个时候进行实例化。 factory.getBean(&quot;m">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_1.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_2.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_3.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_4.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_5.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_6.png">
-<meta property="og:image" content="https://wangmou-niubi.github.io/image-20210907085041344.png">
-<meta property="og:image" content="https://wangmou-niubi.github.io/image-20210906160918557.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_7.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_8.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_9.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_10.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_11.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_12.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_12.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_19.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_18.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_21.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_22.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_113.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_14.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_15.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_16.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_23.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_23.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_24.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_25.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_26.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_27.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_28.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_29.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/pic_30.png">
-<meta property="og:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_31.png">
-<meta property="og:image" content="https://wangmou-niubi.github.io/pic_32.png">
-<meta property="og:image" content="https://wangmou-niubi.github.io/pic_1.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_1.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_2.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_3.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_4.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_5.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_6.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/image-20210907085041344.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/image-20210906160918557.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_7.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_8.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_9.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_10.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_11.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_12.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_12.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_19.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_18.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_21.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_22.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_113.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_14.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_15.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_16.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_23.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_23.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_24.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_25.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_26.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_27.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_28.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_29.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_30.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_31.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_32.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/pic_1.png">
 <meta property="article:published_time" content="2021-08-22T01:59:50.000Z">
-<meta property="article:modified_time" content="2021-09-07T01:11:07.973Z">
+<meta property="article:modified_time" content="2022-01-16T11:28:51.430Z">
 <meta property="article:author" content="王馨">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/犯罪嫌疑人王某/blog/source_posts/Spring/img_1.png">
+<meta name="twitter:image" content="https://wangmou-niubi.github.io/2021/08/22/Spring/img_1.png">
   
     <link rel="alternative" href="/atom.xml" title="犯罪嫌疑人王某" type="application/atom+xml">
   
@@ -210,27 +210,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_1.png" alt="image-20210822104013496"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_2.png" alt="image-20210822104144360"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_3.png" alt="image-20210822104600100"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_4.png" alt="image-20210822111354112"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_5.png" alt="image-20210822112143548"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_6.png" alt="image-20210822112252891"></p>
-<h1 id="IOC底层原理："><a href="#IOC底层原理：" class="headerlink" title="IOC底层原理："></a>IOC底层原理：</h1><h3 id="（1）xml解析-、工厂模式-、-反射"><a href="#（1）xml解析-、工厂模式-、-反射" class="headerlink" title="（1）xml解析 、工厂模式 、 反射"></a>（1）xml解析 、工厂模式 、 反射</h3><p><img src="/image-20210907085041344.png" alt="image-20210907085041344"></p>
+        <p><img src="/2021/08/22/Spring/img_1.png" alt="image-20210822104013496"></p>
+<p><img src="/2021/08/22/Spring/img_2.png" alt="image-20210822104144360"></p>
+<p><img src="/2021/08/22/Spring/img_3.png" alt="image-20210822104600100"></p>
+<p><img src="/2021/08/22/Spring/img_4.png" alt="image-20210822111354112"></p>
+<p><img src="/2021/08/22/Spring/img_5.png" alt="image-20210822112143548"></p>
+<p><img src="/2021/08/22/Spring/img_6.png" alt="image-20210822112252891"></p>
+<h1 id="IOC底层原理："><a href="#IOC底层原理：" class="headerlink" title="IOC底层原理："></a>IOC底层原理：</h1><h3 id="（1）xml解析-、工厂模式-、-反射"><a href="#（1）xml解析-、工厂模式-、-反射" class="headerlink" title="（1）xml解析 、工厂模式 、 反射"></a>（1）xml解析 、工厂模式 、 反射</h3><p><img src="/2021/08/22/Spring/image-20210907085041344.png" alt="image-20210907085041344"></p>
 <h4 id="1-BeanFactory"><a href="#1-BeanFactory" class="headerlink" title="1.BeanFactory"></a>1.BeanFactory</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//XmlBeanFactory是典型的BeanFactory。</span></span><br><span class="line"> BeanFactory factory = <span class="keyword">new</span> XmlBeanFactory(<span class="string">&quot;XXX.xml&quot;</span>);</span><br><span class="line"> <span class="comment">//获取一个叫做mdzz的bean。在这个时候进行实例化。</span></span><br><span class="line"> factory.getBean(<span class="string">&quot;mdzz&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <p><strong>重点：当我们使用BeanFactory去获取Bean的时候，我们只是实例化了该容器，而该容器中的bean并没有被实例化。当我们getBean的时候，才会实时实例化该bean对象。</strong></p>
 <h4 id="2-ApplicationContext-空间换时间"><a href="#2-ApplicationContext-空间换时间" class="headerlink" title="2.ApplicationContext(空间换时间)"></a>2.ApplicationContext(空间换时间)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当我们实例化XXX.xml的时候，该文件中配置的bean都会被实例化。（该bean scope是singleton）</span></span><br><span class="line">ApplicationContext appContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;XXX.xml&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <p> <strong>重点：当我们使用ApplicationContext去获取bean的时候，在加载XXX.xml的时候，会创建所有的配置bean。</strong></p>
-<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p><img src="/image-20210906160918557.png" alt="image-20210906160918557"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_7.png" alt="image-20210822144320584"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_8.png" alt="image-20210822145828735"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_9.png" alt="image-20210822145916792"></p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p><img src="/2021/08/22/Spring/image-20210906160918557.png" alt="image-20210906160918557"></p>
+<p><img src="/2021/08/22/Spring/img_7.png" alt="image-20210822144320584"></p>
+<p><img src="/2021/08/22/Spring/img_8.png" alt="image-20210822145828735"></p>
+<p><img src="/2021/08/22/Spring/img_9.png" alt="image-20210822145916792"></p>
 <p>spring 容器类似于婚介，无论你想不想要，都已经注册在里面了，你要用的时候 直接get就行</p>
 <p><strong>在配置文件加在的时候，容器中管理的对象就已经初始化了</strong></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_10.png" alt="image-20210822150757658"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_11.png" alt="image-20210822150826204"></p>
+<p><img src="/2021/08/22/Spring/pic_10.png" alt="image-20210822150757658"></p>
+<p><img src="/2021/08/22/Spring/pic_11.png" alt="image-20210822150826204"></p>
 <h2 id="5、Spring配置"><a href="#5、Spring配置" class="headerlink" title="5、Spring配置"></a>5、Spring配置</h2><h3 id="5-1-别名（alias）"><a href="#5-1-别名（alias）" class="headerlink" title="5.1 别名（alias）"></a>5.1 别名（alias）</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;asdfg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
@@ -238,41 +238,41 @@
 <h3 id="5-2-Bean的配置"><a href="#5-2-Bean的配置" class="headerlink" title="5.2 Bean的配置"></a>5.2 Bean的配置</h3><p>id：bean的唯一标识符，也就相当于对象名</p>
 <p>class：bean对象所对应的全限定名： 包名+ 类型名</p>
 <p>name: 也是别名，而且更加高级，可以同时取多个别名（逗号，空格 ，分号都可以将name区分）</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_12.png" alt="image-20210822151946152"></p>
-<h3 id="5-3-import"><a href="#5-3-import" class="headerlink" title="5.3 import"></a>5.3 import</h3><p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_12.png" alt="image-20210822152419119"></p>
+<p><img src="/2021/08/22/Spring/pic_12.png" alt="image-20210822151946152"></p>
+<h3 id="5-3-import"><a href="#5-3-import" class="headerlink" title="5.3 import"></a>5.3 import</h3><p><img src="/2021/08/22/Spring/img_12.png" alt="image-20210822152419119"></p>
 <h2 id="6、依赖注入"><a href="#6、依赖注入" class="headerlink" title="6、依赖注入"></a>6、依赖注入</h2><h3 id="6-1-构造器注入"><a href="#6-1-构造器注入" class="headerlink" title="6.1 构造器注入"></a>6.1 构造器注入</h3><p>前面说过了</p>
-<h3 id="6-2-set方式注入【重点】"><a href="#6-2-set方式注入【重点】" class="headerlink" title="6.2 set方式注入【重点】"></a>6.2 set方式注入【重点】</h3><p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_19.png" alt="image-20210822155620381"></p>
+<h3 id="6-2-set方式注入【重点】"><a href="#6-2-set方式注入【重点】" class="headerlink" title="6.2 set方式注入【重点】"></a>6.2 set方式注入【重点】</h3><p><img src="/2021/08/22/Spring/img_19.png" alt="image-20210822155620381"></p>
 <p>![(/img_17.png)</p>
 <p>!(/../../../../AppData/Roaming/Typora/typora-user-images/image-20210822155713898.png)</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_18.png"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_21.png" alt="image-20210822155722119"><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_22.png"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_113.png" alt="image-20210822152858818"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_14.png" alt="image-20210822155101421"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_15.png" alt="image-20210822155218082"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_16.png" alt="image-20210822155257263"></p>
+<p><img src="/2021/08/22/Spring/img_18.png"></p>
+<p><img src="/2021/08/22/Spring/img_21.png" alt="image-20210822155722119"><img src="/2021/08/22/Spring/img_22.png"></p>
+<p><img src="/2021/08/22/Spring/pic_113.png" alt="image-20210822152858818"></p>
+<p><img src="/2021/08/22/Spring/pic_14.png" alt="image-20210822155101421"></p>
+<p><img src="/2021/08/22/Spring/pic_15.png" alt="image-20210822155218082"></p>
+<p><img src="/2021/08/22/Spring/pic_16.png" alt="image-20210822155257263"></p>
 <h3 id="6-3-拓展方式注入"><a href="#6-3-拓展方式注入" class="headerlink" title="6.3 拓展方式注入"></a>6.3 拓展方式注入</h3><p>可以使用c命名空间和p命名空间进行注入</p>
 <p>官方解释</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_23.png" alt="image-20210822162858987"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_23.png" alt="image-20210822162958321"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_24.png" alt="image-20210822163022960"></p>
+<p><img src="/2021/08/22/Spring/img_23.png" alt="image-20210822162858987"></p>
+<p><img src="/2021/08/22/Spring/pic_23.png" alt="image-20210822162958321"></p>
+<p><img src="/2021/08/22/Spring/pic_24.png" alt="image-20210822163022960"></p>
 <p><strong>注意：</strong>c命名空间和p命名空间不能直接使用，需要导入xml约束</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_25.png" alt="image-20210822163246700"></p>
+<p><img src="/2021/08/22/Spring/pic_25.png" alt="image-20210822163246700"></p>
 <p>6.4 Bean的作用域</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_26.png" alt="image-20210822170241523"></p>
+<p><img src="/2021/08/22/Spring/pic_26.png" alt="image-20210822170241523"></p>
 <p>1.单例模式（Spring默认机制）</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_27.png" alt="image-20210822170602906"></p>
+<p><img src="/2021/08/22/Spring/pic_27.png" alt="image-20210822170602906"></p>
 <p>2.原型模式</p>
 <p>每次get都会产生一个新对象</p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_28.png" alt="image-20210822171901335"></p>
+<p><img src="/2021/08/22/Spring/img_28.png" alt="image-20210822171901335"></p>
 <p>3.其余的 request 、 session 、 application只在web中用到</p>
 <p>request ：创建完就失效</p>
 <p>session：一直在session里活着</p>
 <p>application：全局活着</p>
-<h2 id="7-Bean的自动装配"><a href="#7-Bean的自动装配" class="headerlink" title="7.Bean的自动装配"></a>7.Bean的自动装配</h2><p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_29.png" alt="image-20210822190713868"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/pic_30.png" alt="image-20210822191309295"></p>
-<p><img src="C:\Users\犯罪嫌疑人王某\blog\source_posts\Spring/img_31.png" alt="image-20210822192344102"></p>
-<h3 id="7-4、使用注解实现自动装配"><a href="#7-4、使用注解实现自动装配" class="headerlink" title="7.4、使用注解实现自动装配"></a>7.4、使用注解实现自动装配</h3><p><img src="/pic_32.png" alt="image-20210822193729343"></p>
-<h1 id="一、Spring"><a href="#一、Spring" class="headerlink" title="一、Spring"></a>一、Spring</h1><h2 id="1-优点"><a href="#1-优点" class="headerlink" title="1.优点"></a>1.优点</h2><p><img src="/pic_1.png" alt="img"></p>
+<h2 id="7-Bean的自动装配"><a href="#7-Bean的自动装配" class="headerlink" title="7.Bean的自动装配"></a>7.Bean的自动装配</h2><p><img src="/2021/08/22/Spring/img_29.png" alt="image-20210822190713868"></p>
+<p><img src="/2021/08/22/Spring/pic_30.png" alt="image-20210822191309295"></p>
+<p><img src="/2021/08/22/Spring/img_31.png" alt="image-20210822192344102"></p>
+<h3 id="7-4、使用注解实现自动装配"><a href="#7-4、使用注解实现自动装配" class="headerlink" title="7.4、使用注解实现自动装配"></a>7.4、使用注解实现自动装配</h3><p><img src="/2021/08/22/Spring/pic_32.png" alt="image-20210822193729343"></p>
+<h1 id="一、Spring"><a href="#一、Spring" class="headerlink" title="一、Spring"></a>一、Spring</h1><h2 id="1-优点"><a href="#1-优点" class="headerlink" title="1.优点"></a>1.优点</h2><p><img src="/2021/08/22/Spring/pic_1.png" alt="img"></p>
 <h2 id="2-声明式事务"><a href="#2-声明式事务" class="headerlink" title="2.声明式事务"></a>2.声明式事务</h2><p>摘自<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40392686/article/details/82990406?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162987788116780261943474%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=162987788116780261943474&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-82990406.pc_search_similar&amp;utm_term=%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1&amp;spm=1018.2226.3001.4187">https://blog.csdn.net/qq_40392686/article/details/82990406?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162987788116780261943474%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=162987788116780261943474&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-82990406.pc_search_similar&amp;utm_term=%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1&amp;spm=1018.2226.3001.4187</a></p>
 <p>编程式事务：指的是由程序员编写事务控制代码，包含事务的提交与回滚等。<br>声明式事务：事务控制代码已经由Spring写好，程序员只需要声明出哪些方法需要进行事务控制和如何进行事务控制。</p>
 <p>声明式事务都是针对ServiceImpl类下的方法的<br>事务管理器是基于通知（advice）的</p>
@@ -447,7 +447,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 王馨
+    		&copy; 2022 王馨
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
