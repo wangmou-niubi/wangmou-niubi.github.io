@@ -45,7 +45,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="/QQ图片20220116200606.png" class="js-avatar">
+			<img src="/2022/01/16/PFM2/head/QQ图片20220116200606.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href=""></a></h1>
@@ -103,7 +103,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/QQ图片20220116200606.png" class="js-avatar">
+				<img src="/2022/01/16/PFM2/head/QQ图片20220116200606.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -153,6 +153,875 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-雨滴" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/01/%E9%9B%A8%E6%BB%B4/">雨滴</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/01/%E9%9B%A8%E6%BB%B4/" class="archive-article-date">
+  	<time datetime="2021-11-01T11:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>rainmeter皮肤编写教程</p>
+<table>
+<thead>
+<tr>
+<th>代码块</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[Rainmeter]</td>
+<td>放置一般设定。</td>
+</tr>
+<tr>
+<td>[Variables]</td>
+<td>存放变量。</td>
+</tr>
+<tr>
+<td>[Meters]</td>
+<td>实际测量值在屏幕的表现方式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>[Rainmeter]<br>Background=255, 0, 255</p>
+<p>——背景，可用BMP,JPG和PNG（带透明）图片！ 255, 0, 255表示透明，默认透明。</p>
+<p>BackgroundMode=1</p>
+<p>——背景模式，0-Background定义的图片。，1-透明，2-纯色，3-缩放的图片。默认1</p>
+<p>BackgroundMargins=10,10,10,10</p>
+<p>——定义背景图像的边缘，在BackgroundMode=3的时候也不会被缩放。</p>
+<p>SolidColor=FFFF0080</p>
+<p>SolidColor2=FF00FF40</p>
+<p>——如果BackgroundMode设置为2的时候，此项定义背景色及第二渐变颜色。</p>
+<p>GradientAngle=</p>
+<p>——如果Background模式设置为2的时候，此项定义颜色梯度（颜色渐变）的角度。角度以弧度制定义。</p>
+<p>BevelType=0</p>
+<p>——此项描述的是纯背景颜色周围的斜缘边。0=无，1=凸起，2=凹陷。</p>
+<p>Update=1000</p>
+<p>——Meters的更新时间，单位是毫秒，默认是1000即1秒。</p>
+<p>TransitionUpdate=100</p>
+<p>——meter的过渡时间，默认是100</p>
+<p>DynamicWindowSize=0</p>
+<p>——如果设置成1，窗口会在每次更新时进行大小重新计算，必要情况下会自动缩放窗口大小。</p>
+<p>DragMargins=</p>
+<p>——定义窗口不允许被拖动的区域。需要定义4个值并以逗号分隔。这个值定义的是不允许拖动的区域。负值是从对边开始计算的。</p>
+<p>KeepOnScreen=0</p>
+<p>——设置成1则窗口始终保持在监视器的范围之内。（建议玩全屏降分辨率游戏的用户不要开启此项选项，这样会导致退出游戏后插件移位）</p>
+<p>Author=AuthorName</p>
+<p>——皮肤作者的名字和E-Mail地址。该字符串会显示在关于的对话框内。</p>
+<p>AppVersion=1001000</p>
+<p>——此插件支持的最低RM引擎版本。如果你认为没必要可以不写。</p>
+<p>——Major * 1000000 + Minor1 * 1000 + Minor2. eg: Rainmeter 0.11.4 是 11004 ，Rainmeter 1.0 是 1000000.</p>
+<p>LocalFont=#PROGRAMPATH#Fonts\Digitle.ttf</p>
+<p>——LocalFont2=[path]FilenameOfFont.ttf | .otf</p>
+<p>——自定义字体文件位置，在meter中可以通过FontFace=调用字体，1.1版貌似要重启软件才能调用新字体。</p>
+<p>[Variables]<br>CityCode=123456</p>
+<p>——在meter中就可以通过”url=<a target="_blank" rel="noopener" href="http://www.weather.com/#CityCode#.html&quot;%E8%B0%83%E7%94%A8%E3%80%82">http://www.weather.com/#CityCode#.html&quot;调用。</a></p>
+<p>以下是内置变量:</p>
+<p>#PROGRAMPATH#</p>
+<p>——Rainmeter软件所在目录 (eg: C:\Program Files\Rainmeter).</p>
+<p>#SETTINGSPATH#</p>
+<p>——Rainmeter设置文件Rainmeter.ini所在目录(eg: C:\Documents and Settings{yourname}\Application Data\Rainmeter)</p>
+<p>#SKINSPATH#</p>
+<p>——Rainmeter的皮肤所在目录(eg: C:\Documents and Settings{yourname}\My Documents\Rainmeter\Skins)</p>
+<p>#PLUGINSPATH#</p>
+<p>——Rainmeter的插件所在目录(eg: C:\Program Files\Rainmeter\Plugins)</p>
+<p>#ADDONSPATH#</p>
+<p>——Rainmeter的扩展程序所在目录(C:\Program Files\Rainmeter\Addons)</p>
+<p>#CURRENTPATH#</p>
+<p>——某个皮肤(.ini文件)所在的目录</p>
+<p>#CURRENTCONFIG#</p>
+<p>——rainmeter中显示的皮肤名称 (eg: Enigma\Sidebar)</p>
+<p>#WORKAREAX#</p>
+<p>——皮肤工作面积的横向坐标</p>
+<p>#WORKAREAY#</p>
+<p>——皮肤工作面积的纵向坐标</p>
+<p>#WORKAREAWIDTH#</p>
+<p>——皮肤工作面积的宽</p>
+<p>#WORKAREAHEIGHT#</p>
+<p>——皮肤工作面积的高</p>
+<p>#SCREENAREAWIDTH#</p>
+<p>——显示器分辨率的宽</p>
+<p>#SCREENAREAHEIGHT#</p>
+<p>——显示器分辨率的高</p>
+<p>[Metadata]<br>Name=Title | Subtitle</p>
+<p>——皮肤名称，副标题</p>
+<p>Config=Root Skin Folder | Subfolders | Current Folder</p>
+<p>——配置皮肤文件夹结构</p>
+<p>Description=Point 1 | Point 2 | Point 3</p>
+<p>——皮肤的描述</p>
+<p>Instructions=Point 1 | Point 2 | Point 3</p>
+<p>——皮肤的指令说明</p>
+<p>Version=2.0</p>
+<p>——皮肤版本</p>
+<p>Tags=Tag 1 | Tag 2 | Tag 3</p>
+<p>——标签</p>
+<p>License=Creative Commons Attribution-Non-Commercial-Share Alike 3.0</p>
+<p>——许可</p>
+<p>Variant=1</p>
+<p>——变动</p>
+<p>Preview=#SKINSPATH#MyConfig\Images\Previews\Preview.png</p>
+<p>——皮肤缩略图</p>
+<p>[Measure]<br>Measure=Plugin</p>
+<p>这里定义Measures，有效值如下：</p>
+<p>CPU</p>
+<p>测算CPU负载，如需独立监控各核占用情况开启PerfMon插件。</p>
+<p>Memory</p>
+<p>测算记忆体总利用率。</p>
+<p>PhysicalMemory</p>
+<p>测算物理内存分配。</p>
+<p>SwapMemory</p>
+<p>测算虚拟内存分配。</p>
+<p>网络流量<br>NetIn</p>
+<p>测算网络下载流量。</p>
+<p>NetOut</p>
+<p>测算网络上载流量。</p>
+<p>NetTotal</p>
+<p>测算网络总流量。</p>
+<p>硬盘容量<br>FreeDiskSpace</p>
+<p>测算空闲硬盘总量。</p>
+<p>PefMon</p>
+<p>测算终端性能数据。</p>
+<p>Uptime</p>
+<p>显示系统开机后持续的时间，仅在STRING-meter下工作。</p>
+<p>Plugin</p>
+<p>调用外部插件定义Measures。</p>
+<p>Registry</p>
+<p>测算注册表值。</p>
+<p>Time</p>
+<p>测算即时时间和日期。</p>
+<p>Calc</p>
+<p>计算公式。</p>
+<p>InvertMeasure</p>
+<p>——如果设置成1，反转测量值。（e.g.将空闲硬体容量反转为目前硬体占用容量）</p>
+<p>IfAboveAction</p>
+<p>——如果实际测量值超过设定值时执行的命令。这个动作在测定值超越设定值时仅会被执行一次，所以如果要再次执行此动作前测定值需低于设定值。</p>
+<p>IfAboveValue</p>
+<p>——IfAboveAction的设定值。</p>
+<p>IfBelowAction</p>
+<p>——如果实际测量值低于设定值时执行的命令。这个动作在测定值低于设定值时仅会被执行一次，所以如果要再次执行此动作前测定值需高于设定值。</p>
+<p>IfBelowValue</p>
+<p>——IfBelowAction的设定值。</p>
+<p>IfEqualAction</p>
+<p>——当测量值等于IfEqualValue定义的值时执行的命令。当测量值等于设定值时命令仅执行一次，如果需要再次执行，测量值必须先低于</p>
+<p>或者高于设定值。值四舍五入到整数。</p>
+<p>IfEqualValue</p>
+<p>——IfEqualAction的设定值。</p>
+<p>Disabled</p>
+<p>——如果设置成1，在启动时不进行测量。</p>
+<p>UpdateDivider</p>
+<p>——此值决定着测量频率。此值于Update值绑定。比如Update=1000&amp;UpdateDivider=30，则没30s测算一次。此项默认值为1。</p>
+<p>MaxValue</p>
+<p>——测算最大值。</p>
+<p>MinValue</p>
+<p>——测算最小值。</p>
+<p>Substitute</p>
+<p>——此项可以替换关键词，必须成对出现并用逗号分隔，注意必须要用引号引出。（e.g.Substitute=“cat”:”dog”表述的是在测量值中将关键词cat全部替换成dog）</p>
+<p>AverageSize</p>
+<p>——定义窗口的测量平均取值。（e.g.如果设置成10则将输出最后10次测量的平均值）</p>
+<p>CPU</p>
+<p>Processor</p>
+<p>——设置为1至n，表示第1至n的CPU核心，如果不设或为0则返回所有CPU的平均值。</p>
+<p>NetIn</p>
+<p>NetInSpeed</p>
+<p>——用户网络接入最高速度。该值单位以1bit/s计。如果这个值缺损或者设置为0，这个值将以实际值决定。注意峰值。</p>
+<p>TrafficAction</p>
+<p>——当下载数据到达一定量时所执行的行为。</p>
+<p>TrafficAction</p>
+<p>——TrafficAction的设定值。</p>
+<p>Interface</p>
+<p>——网卡监测数据。如果此处被设置为0（默认值），所有的端口将被加在一起，如果值为1，则记录第一块网卡，2为第二块.etc.。</p>
+<p>Cumulative</p>
+<p>——如果设置成1，将监测数据累积(i.e.把监测数据加在一起)。这可以用来检测特定周期的交换数据总量。</p>
+<p>NetOut NetOutSpeed</p>
+<p>——（用户网络输出最高速度） etc.</p>
+<p>NetTotal NetTotalSpeed</p>
+<p>——（用户网络输入输出最高速度） etc.</p>
+<p>FreeDiskSpace</p>
+<p>Drive</p>
+<p>——检测的具体硬体。（e.g.“C:”）</p>
+<p>Total</p>
+<p>——如果设置成1，则反馈数据显示硬体的总容量。</p>
+<p>Label</p>
+<p>——如果设置成1，则反馈数据显示驱动器标签。</p>
+<p>InvertMeasure</p>
+<p>——如果设置为1，这将返回“使用空间”而不是“自由空间”。 此设置并不限于FreeDriveSpace。</p>
+<p>IgnoreRemovable</p>
+<p>——默认值为1 - 可移动驱动器将被忽略。 如果设置为0，可移动驱动器进行测量。</p>
+<p>Plugin</p>
+<p>Plugin</p>
+<p>——定义实际测量时需用到的插件名。</p>
+<p>Registry</p>
+<p>RegKey</p>
+<p>——注册表项名。</p>
+<p>RegHKey</p>
+<p>——HKEY名。有效值有：</p>
+<p>——HKEY_CURRENT_CONFIG, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_PERFORMANCE_DATA and HKEY_DYN_DATA.</p>
+<p>RegValue</p>
+<p>——注册表项值名。仅支持字符串和长字符串。</p>
+<p>Time</p>
+<p>Format</p>
+<p>——时间表达格式（e.g.“%H:%M:%S”）。你可以从MSDN找到所有的代码格式。</p>
+<p>TimeZone</p>
+<p>——时区值（e.g.+2.0）.</p>
+<p>DaylightSavingTime</p>
+<p>——如果设置成1则将开启夏令时（取决于你的本地时间）。这仅在时区TimeZone值被设定的情况下有效。</p>
+<p>Calc</p>
+<p>Formula</p>
+<p>——此项定义计算公式。你可以使用其他的Measures来作为Variables。这里还有一个特殊的变量称之为Counter，它在每次更新后增加。这个变量仅在所有其他的Measures更新完毕后更新。注意配置文件都区分大小写，所有的函数都必须大写(e.g.SIN(10*PI))。</p>
+<p>基本运算：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+（加） 、 -（减） 、 *（乘） 、 /（除） 、 **（幕） 、 %（余下或模） 、 &amp;（位与） 、 |（按位或） 、 ^（按位异或） 、 ~（按位不）</span><br></pre></td></tr></table></figure>
+
+<p>1<br>逻辑运算符：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&gt;（不等于）、 =（等于）、 &gt;（大于）、 &lt;（小于）、 &amp;&amp;（逻辑与）、 ||（逻辑或)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1<br>函数:<br>ATAN(x), ASIN(x), ACOS(x), COS(x), SIN(x), TAN(x) - 标准三角函数</p>
+<p>ABS(x) - x绝对值.</p>
+<p>EXP(x) - 返回e^x的值.</p>
+<p>LN(x) - 返回x的自然对数.</p>
+<p>SQRT(x) - x的平方.</p>
+<p>SGN(x) - x是正数则返回1, 负数返回-1.</p>
+<p>FRAC(x) - 返回小数部分 (eg: FRAC(1.234) = 0.234).</p>
+<p>TRUNC(x) - 返回整数部分 (eg:TRUNC(1.234) = 1).</p>
+<p>FLOOR(x) - Floor of x.</p>
+<p>CEIL(x) - Ceiling of x.</p>
+<p>ROUND(x[,precision]) -四舍五入 Rounds x to an integer, or to a specified number of decimal places. Precision is optional.</p>
+<p>条件运算符:<br>? &lt;expr. if true.&gt; : &lt;expr. if false.&gt;</p>
+<p>表示</p>
+<p>if (condition)</p>
+<p>then</p>
+<p>expr. if true</p>
+<p>else</p>
+<p>expr. if false</p>
+<p>end if</p>
+<p>Example:<br>[MeasureCalc]</p>
+<p>Measure=Calc</p>
+<p>Formula=(Random)</p>
+<p>LowBound=5</p>
+<p>HighBound=100</p>
+<p>——表示返回5-100之间的随机数</p>
+<p>UpdateRandom=1</p>
+<p>—— 1表示每次循环就刷新随机函数，0表示刷新皮肤才刷新随机函数</p>
+<p>[Meter]<br>——每个meter都去要有一个唯一的名称，并在配置文件中加以定义。命名必须用“[]”符号括起。命名没有特别要求不过不要在一个配置文件中有重复出现，不要在命名中出现空格。</p>
+<p>FontColor</p>
+<p>FontEffectColor</p>
+<p>SolidColor</p>
+<p>PrimaryColor</p>
+<p>SecondaryColor</p>
+<p>BothColor</p>
+<p>BarColor</p>
+<p>LineColor</p>
+<p>HorizontalLineColor</p>
+<p>MeasureName</p>
+<p>——Meter表述的Measure名称。</p>
+<p>X ——窗口内的X坐标，在结尾以加上“r”的形式可以将坐标与前一个meter相关联(e.g. X=5r)。也可以用大写“R”来与前一个Meter的右边缘关联。</p>
+<p>Y ——窗口内的Y坐标，在结尾以加上“r”的形式可以将坐标与前一个meter相关联(e.g. Y=-10r)。也可以用大写“R”来与前一个Meter的底部边缘关联。</p>
+<p>W ——Meter的宽度。如果你使用可计算出宽度的图片或者字符串表的话可以不需要做定义。如果你使用桌面作为整个RM的背景则需要定义所有插件的长度和宽度，不然窗口的尺寸可能出现计算错误的情况。</p>
+<p>H——Meter的长度。其余同上“W”参数值。</p>
+<p>Hidden ——如果设置成1则Meter隐藏。</p>
+<p>LeftMouseDownAction</p>
+<p>RightMouseDownAction</p>
+<p>Lef</p>
+<p>tMouseUpAction</p>
+<p>RightMouseUpAction</p>
+<p>MouseOverAction</p>
+<p>MouseLeaveAction</p>
+<p>——这些和全局设定效果相同，但仅应用于特定的Meter。此处的设置权限高于全局设置。</p>
+<p>——注意：当窗口被允许拖动的情况下LeftMouseUpAction无效。你需要用DragMargins定义可拖动区域以此来避免Meter的重叠操作。</p>
+<p>UpdateDivider</p>
+<p>——此值决定Meter的更新间隔。此值与Update值绑定。比如当Update=1000，UpdateDivider=30则Meter每30s更新一次。默认值为1.</p>
+<p>SolidColor</p>
+<p>——Meter的背景色。</p>
+<p>SolidColor2</p>
+<p>——第二颜色的背景梯度(颜色渐变的第二颜色)。</p>
+<p>GradientAngle</p>
+<p>——颜色梯度（颜色渐变）的角度。角度以弧度制定义。</p>
+<p>BevelType</p>
+<p>——此项描述的是纯背景颜色周围的斜缘边。0=无，1=凸起，2=凹陷。</p>
+<p>AntiAlias</p>
+<p>——设置为1，表示开启抗锯齿</p>
+<p>MeterStyle</p>
+<p>——表示公共stytle</p>
+<p>Example:<br>[MyStringStyle]</p>
+<p>FontColor=#FontColor#</p>
+<p>FontFace=TheSansBold-Caps</p>
+<p>FontSize=11</p>
+<p>StringEffect=SHADOW</p>
+<p>StringStyle=BOLD</p>
+<p>StringAlign=LEFT</p>
+<p>AntiAlias=1</p>
+<p>——Then in any meter, use:</p>
+<p>[Meter]</p>
+<p>Meter=STRING ——(or any other meter type)</p>
+<p>MeterStyle=MyStringStyle</p>
+<table>
+<thead>
+<tr>
+<th>Meter的类型</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BAR</td>
+<td>条形图</td>
+</tr>
+<tr>
+<td>BITMAP</td>
+<td>位图</td>
+</tr>
+<tr>
+<td>BUTTON</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td>HISTOGRAM</td>
+<td>直方图表</td>
+</tr>
+<tr>
+<td>IMAGE</td>
+<td>图像</td>
+</tr>
+<tr>
+<td>LINE</td>
+<td>线</td>
+</tr>
+<tr>
+<td>ROTATOR</td>
+<td>旋转</td>
+</tr>
+<tr>
+<td>ROUNDLINE</td>
+<td>圆点 线</td>
+</tr>
+<tr>
+<td>STRING</td>
+<td>字体</td>
+</tr>
+</tbody></table>
+<p>条形图<br>[Bar]</p>
+<p>Meter=BAR</p>
+<p>BarColor</p>
+<p>——Bar的颜色。</p>
+<p>BarImage</p>
+<p>——Bar的背景图片。这可以用来替代BarColor。</p>
+<p>BarBorder</p>
+<p>——此处定义Bar的边缘。</p>
+<p>BarOrientation=HORIZONTAL</p>
+<p>——Bar的方向性。有效值如下：HORIZONTAL(水平)、VERTICAL（垂直）</p>
+<p>Flip=0</p>
+<p>——如果设置为1则反转Bar的方向。</p>
+<p>位图<br>[Bitmap]</p>
+<p>Meter=BITMAP</p>
+<p>BitmapImage</p>
+<p>——这是包含图像帧图像的名称。图像可以规定水平或垂直位图中。自动确定方向形成高度或宽度的位图（无论是较大）。同时，一个帧的大小则自动计算因此要裁剪图像，以便帧周围没有额外的空间。图像可以是任何受支持的格式： bmp gif，jpg 或 png。 如果 BitmapExtend 不是 1，然后位图米要求被使用的方法，是从 0.0 到 1.0 或有 MaxValue 和 MinValue 设置。</p>
+<p>BitmapFrames</p>
+<p>——图像中的帧数。</p>
+<p>BitmapTransitionFrames</p>
+<p>——每值过渡帧的数量。过渡帧帧的显示时，米的价值变化。过渡帧相同的数目，必须在每次使用常规框架。在[Rainmeter]部分TransitionUpdate设置确定在该帧过渡期间显示的汇率。过渡动画总期限因此TransitionUpdate * BitmapTransitionFrames。请注意，BitmapFrames始终定义的帧总数位图，包括过渡帧。因此，举例来说，如果位图有10个值，每个过渡，另外4架组成，然后BitmapFrames应设置为50 BitmapTransitionFrames 4。</p>
+<p>Bitm</p>
+<p>apZeroFrame</p>
+<p>——如果设置为 1，第一帧时使用只测量到的值为零。 否则帧所测量到的值线性决定。</p>
+<p>BitmapExtend</p>
+<p>——如果设置为 1 将扩展该位图，因此显示整个值。 示例，如果定义一个位图，它定义帧从 0 到 9，您可以使用此为位图数字</p>
+<p>BitmapDigits</p>
+<p>——位图动画的数目</p>
+<p>BitmapAlign</p>
+<p>——定义位图对齐方式LEFT, CENTER and RIGHT</p>
+<p>BitmapSeparation</p>
+<p>——分离时BitmapDigits之间的数字高于1。 这也可以是负数。</p>
+<p>位图例子<br>Examples:</p>
+<p>[MeasureDate]</p>
+<p>Measure=Time</p>
+<p>Format=%d</p>
+<p>[MeterDate]</p>
+<p>MeasureName=MeasureDate</p>
+<p>Meter=BITMAP</p>
+<p>X=50</p>
+<p>Y=0</p>
+<p>BitmapImage=number.png</p>
+<p>BitmapFrames=10</p>
+<p>BitmapExtend=1</p>
+<p>BitmapDigits=2</p>
+<p>BitmapAlign=CENTER</p>
+<p>按钮<br>[BUTTON]</p>
+<p>Meter=BUTTON</p>
+<p>ButtonImage</p>
+<p>——按钮图像的名称。 图像必须具有 3 帧，可以设置水平或垂直方向确定图像的高度和宽度。在第一帧对应于正常他按钮的图像。单击该按钮时显示第二个帧。当鼠标悬停在按钮上时显示的第三个框架。</p>
+<p>ButtonCommand</p>
+<p>——命令或 ！ 邦，在按下该按钮时执行。</p>
+<p>按钮例子<br>Examples:</p>
+<p>[MeterNote]</p>
+<p>Meter=BUTTON</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>ButtonImage=Button.png</p>
+<p>ButtonCommand=!Execute [notepad]</p>
+<p>直方图表<br>[Histogram Meter]</p>
+<p>Meter=HISTOGRAM</p>
+<p>SecondaryMeasureName</p>
+<p>——辅助度量值的名称。 这定义度量值为辅助的直方图绘制对同一个表。 不需要这定义，如果不需要其他计量器。</p>
+<p>PrimaryColor</p>
+<p>——主直方图的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>SecondaryColor</p>
+<p>——次直方图的颜色。</p>
+<p>BothColor</p>
+<p>——主和次直方图的相交时使用的颜色。</p>
+<p>PrimaryImage</p>
+<p>——用于后面辅助直方图的图像的名称。 您可以使用颜色或图像而不是都在同一时间。 因此，如果您定义 PrimaryImage 您还必须定义 SecondaryImage 和 BothImage 如果您有相同的直方图不是 SecondaryColor 或 BothColor 中的一项辅助措施。</p>
+<p>SecondaryImage</p>
+<p>——用于后面辅助直方图的图像的名称。</p>
+<p>BothImage</p>
+<p>——图像时，小学和中学的直方图是分开的基础上所使用的名称。</p>
+<p>Autoscale</p>
+<p>——如果设置为 1，直方图进行自动缩放以显示所有值。</p>
+<p>Flip</p>
+<p>——如果设置为 1 是翻转的样式。</p>
+<p>直方图表案例<br>Examples:</p>
+<p>[MeasureCPU]</p>
+<p>Measure=CPU</p>
+<p>[MeterCPU]</p>
+<p>MeasureName=MeasureCPU</p>
+<p>Meter=HISTOGRAM</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=100</p>
+<p>H=20</p>
+<p>PrimaryColor=0,0,0,200</p>
+<p>SolidColor=255,255,255,200</p>
+<p>BarOrientation=HORIZONTAL</p>
+<p>AntiAlias=1</p>
+<p>图像<br>[Image Meter]</p>
+<p>Meter=IMAGE</p>
+<p>ImageName</p>
+<p>——图片的名称显示。</p>
+<p>Path</p>
+<p>——图像的路径。 该路径是相对于皮肤文件夹。</p>
+<p>AntiAlias</p>
+<p>——如果设置</p>
+<p>为1，图像有抗锯齿插值应用程序时，它显示。</p>
+<p>PreserveAspectRatio</p>
+<p>——如果设置为1，以图像的宽高比缩放。</p>
+<p>默认值为PreserveAspectRatio = 0</p>
+<p>您可以使用 PreserveAspectRatio 指定 W 和 H = 0，和它将缩放图像精确指定的大小。不保留长宽比。</p>
+<p>您可以使用 PreserveAspectRatio 指定 W 或 H 单 = 1，并将图像为给定的值与其他未定义”方面”被自动缩放以保留长宽比缩放。</p>
+<p>您可以指定 W 和 H 与 PreserveAspectRatio = 1，并将使用较大的宽度或高度维度的设置为用户定义的值，原来的图像缩放图像和其他”方面”设置为所需保留长宽比。 这样该图像会向容器定义 W 和 H 的即使该用户不知道是否图像原本是”纵向”或”横向”（高或宽） 从源中”适合”。</p>
+<p>在所有情况下，该图像”本”宽和 ·”死亡空间”创建者保持长宽比 （像在电视机上观看宽屏电影标准 4: 3 屏幕上的时，黑条) 所定义的表是透明的。</p>
+<p>图像米作为 W 或 H 或两者，值，可以使用 [MeasureName]，并对每个度量值使用的更新进行图像缩放。这意味着一个刷新不需要调整图像大小，并动态”缩放”的图像可通过使用来更改大小值的措施。</p>
+<p>Greyscale</p>
+<p>——如果设置为1，该图片将显示为灰度。 如果指定，这是 ImageTint 或 ColorMatrix 之前应用</p>
+<p>ImageTint</p>
+<p>——以浅色图像颜色。 颜色载于时相同的方式，为 SolidColor: RGB(A)。 如果指定 alpha 值，则该图像，可以进行半透明 (0 表示不可见，255 表示完全不透明）。 默认值为白色 （255、 255、 255、 255)。</p>
+<p>ColorMatrixN</p>
+<p>——he ColorMatrix 参数表示一个用于处理图像的颜色值的 5 x 5 矩阵。它分为五个单独参数之一的每一行的每个编号。 默认矩阵，如下所示：</p>
+<p>ColorMatrix1=1—— 0—— 0—— 0—— 0</p>
+<p>ColorMatrix2=0—— 1—— 0—— 0—— 0</p>
+<p>ColorMatrix3=0—— 0—— 1—— 0—— 0</p>
+<p>ColorMatrix4=0—— 0—— 0—— 1—— 0</p>
+<p>ColorMatrix5=0—— 0—— 0—— 0—— 1</p>
+<p>主对角线上的值是，从左上到右下： 红、 绿色、 蓝、 Alpha 和一个占位符。 值表示的当前在其中 0.0 是 none，1.0 是正常的图像中的特定值的百分比。矩阵中剩余的条目允许值修改的另一种颜色的颜色（恩：红的值可能有一半的蓝色增值)，直接添加到颜色的偏移的值确定最终行 (ColorMatrix5) 中的项。 （（例如： ColorMatrix5 = 0.5—— 0—— 0—— 0—— 1 将添加到红色的值的 50%)。一个更深层的解释将被列入对完全免除了 Rainmeter v1.2 教程。</p>
+<p>ImageFlip</p>
+<p>——“NONE”, “HORIZONTAL”, “VERTICAL” or “BOTH”.值为”NONE”、“卧式”、“立式”两者”。</p>
+<p>ImageRotate</p>
+<p>——图像旋转度的定义数量。 负数旋转逆时针方向。</p>
+<p>图像案例<br>Examples:</p>
+<p>[MeasureQuote]</p>
+<p>Measure=Plugin</p>
+<p>Pl</p>
+<p>ugin=Plugins\QuotePlugin.dll</p>
+<p>PathName=”#PROGRAMPATH#Skins\Tranquil”</p>
+<p>FileFilter=*.png</p>
+<p>[MeterImage]</p>
+<p>Meter=IMAGE</p>
+<p>MeasureName=MeasureQuote</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=150</p>
+<p>H=150</p>
+<p>PreserveAspectRatio=1</p>
+<p>—— The following image would be greyscaled, then tinted orange:</p>
+<p>[MeterTintedImage]</p>
+<p>Meter=Image</p>
+<p>ImageName=image.png</p>
+<p>Greyscale=1</p>
+<p>ImageTint=255,128,64,255</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=200</p>
+<p>H=200</p>
+<p>Line<br>[Line Meter]</p>
+<p>Meter=LINE</p>
+<p>LineCount</p>
+<p>——表中的行数。 可以有任意数目的同一个表中的行。 在名称中的使用 [N] 设置必须具有用来定义的行的编号。请注意，第一行数没有 (ei： MeasureName、 LineColor 和规模都用于在第一的行号为后续行添加）。</p>
+<p>MeasureName[N]</p>
+<p>——行 [N] 的度量值的名称。</p>
+<p>LineColor[N]</p>
+<p>——N线的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>Scale[N]</p>
+<p>——行 [N] 的比例。 测量到的值乘以此值。</p>
+<p>AutoScale</p>
+<p>——如果设置为 1，行自动缩放，以便最大值是在油分计中可见。 如果设置为 0，计的规模是从使用该措施的所有的最大的最大值。</p>
+<p>HorizontalLines</p>
+<p>——如果设置为 1 的水平线直方图行后面绘制。</p>
+<p>HorizontalLineColor</p>
+<p>——水平的线条的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>LineWidth</p>
+<p>——行宽，以像素为单位的宽度。</p>
+<p>Flip</p>
+<p>——如果设置为 1 是翻转的样式。</p>
+<p>Examples:<br>[MeasureNetIn]</p>
+<p>Measure=NetIn</p>
+<p>[MeasureNetOut]</p>
+<p>Measure=NetOut</p>
+<p>[MeterNetwork]</p>
+<p>Meter=LINE</p>
+<p>MeasureName=MeasureNetOut</p>
+<p>MeasureName2=MeasureNetIn</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=100</p>
+<p>H=20</p>
+<p>LineCount=2</p>
+<p>LineColor=221,53,174,200</p>
+<p>LineColor2=0,0,0,200</p>
+<p>SolidColor=255,255,255,200</p>
+<p>AutoScale=1</p>
+<p>AntiAlias=1</p>
+<p>Rotator 图像<br>[Rotator Meter]</p>
+<p>Meter=ROTATOR</p>
+<p>——转子计显示图像，围绕旋转的角度位置确定一个点它附加到度量值。 转子米要求被使用的方法，是从 0.0 到 1.0 或有 MaxValue 和 MinValue 设置。</p>
+<p>ImageName</p>
+<p>——旋转图像的名称。</p>
+<p>OffsetX</p>
+<p>——的旋转中心的 X 偏移量。</p>
+<p>offsetY</p>
+<p>——Y 位移旋转的中心。</p>
+<p>StartAngle</p>
+<p>——行的角度开始。 这是弧度及零角度在右边。 defualt 旋转方向是顺时针方向。</p>
+<p>RotationAngle</p>
+<p>——大小的旋转角度为行。 逆时针方向旋转使用负值。</p>
+<p>ValueRemainder</p>
+<p>——使用其余部分而不是实际的测量值。 这可用于绘制模拟时钟。</p>
+<p>Examples:<br>[MeasureTime]</p>
+<p>Measure=Time</p>
+<p>[MeterHours]</p>
+<p>MeasureName=MeasureTime</p>
+<p>Meter=ROTATOR</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=30</p>
+<p>H=30</p>
+<p>ImageName=Hours.png</p>
+<p>StartAngle=6.2832</p>
+<p>RotationAngle=6.2832</p>
+<p>ValueReminder=43200</p>
+<p>OffsetX=14.5</p>
+<p>OffsetY=14.5</p>
+<p>[MeterMinutes]</p>
+<p>MeasureName=MeasureTime</p>
+<p>Meter=ROTATOR</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W</p>
+<p>=30</p>
+<p>H=30</p>
+<p>ImageName=Minutes.png</p>
+<p>StartAngle=6.2832</p>
+<p>RotationAngle=6.2832</p>
+<p>ValueReminder=3600</p>
+<p>OffsetX=14.5</p>
+<p>OffsetY=14.5</p>
+<p>Roundline 围绕一个点的单个行<br>[Roundline Meter]</p>
+<p>Meter=ROUNDLINE</p>
+<p>——roundline 仪表显示围绕一个点的单个行。线条的角度确定度量值。默认情况下，最小位置指向该的权利在行然后移动顺时针，直到它再次指向右边。如果未定义宽度和高度的中心点是该油分计的 X 和 Y 位置。如果指定的宽度和高度多则是在外框的中间。 Roundline 米要求被使用的方法，是从 0.0 到 1.0 或有 MaxValue 和 MinValue 设置。</p>
+<p>LineWidth</p>
+<p>——行宽，以像素为单位的宽度</p>
+<p>LineLength</p>
+<p>——这定义线的长度。 从旋转 （无论是 LineStart 的值） 的中心始终测量长度。</p>
+<p>ControlLength、 LengthShift</p>
+<p>——如果 ControlLength 设置为 1，度量值控制从 LineLength 到 LineLength + LengthShift 的 LineLength。</p>
+<p>LineStart</p>
+<p>——这定义从该行开始处的中心的距离。</p>
+<p>ControlStart、 StartShift</p>
+<p>——如果 ControlStart 设置为 1，这项措施控制从 LineStart 到 LineStart + StartShift 的 LineStart。</p>
+<p>StartAngle</p>
+<p>——行起始角度。 这是以弧度表示，零角度是右侧。 默认旋转方向是顺时针方向。</p>
+<p>ControlAngle、 RotationAngle</p>
+<p>——除非 ControlAngle 设置为 0，这项措施控制从 0 到 RotationAngle 的 RotationAngle。 旋转角度行的大小。 逆时针方向旋转使用负值。</p>
+<p>ValueRemainder</p>
+<p>——使用其余部分而不是实际的测量值。 这可用于绘制一个模拟时钟。</p>
+<p>LineColor</p>
+<p>——线的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>Solid</p>
+<p>——设置为 1，计将绘制饼图-相反。</p>
+<p>Examples:<br>[MeasureDisk]</p>
+<p>Measure=FreeDiskSpace</p>
+<p>Drive=C:</p>
+<p>InvertMeasure=1</p>
+<p>[MeterDisk]</p>
+<p>Meter=ROUNDLINE</p>
+<p>MeasureName=MeasureDisk</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>W=50</p>
+<p>H=50</p>
+<p>StartAngle=4.712</p>
+<p>RotationAngle=6.283</p>
+<p>LineLength=25</p>
+<p>LineColor=0,0,0,200</p>
+<p>Solid=1</p>
+<p>AntiAlias=1</p>
+<p>字体<br>[String Meter]</p>
+<p>Meter=STRING</p>
+<p>——字符串米以文本形式显示度量值的值。 字符串表不一定要有一个附加到它上面的措施，只是可以设置的文本字符串。</p>
+<p>MeasureName#</p>
+<p>——字符串米允许同时使用相同的米内的多个度量值。 若要指定其他措施，将追加一个数字，以”MeasureName”（如： MeasureName2，MeasureName3，等等…)。</p>
+<p>FontColor</p>
+<p>——文本的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>Prefix</p>
+<p>——值之前显示的字符串。</p>
+<p>Postfix</p>
+<p>——值之前显示的字符串。</p>
+<p>FontFace</p>
+<p>——字体的名称。 请注意这不是该字体文件，但本身的字体的名称。</p>
+<p>FontSize</p>
+<p>——字体的大小。</p>
+<p>StringAlign</p>
+<p>——字符串的对齐方式。 有效值</p>
+<p>为: LEFT, CENTER and RIGHT。</p>
+<p>StringStyle</p>
+<p>——字符串的样式。 有效值为： NORMAL, BOLD, ITALIC and BOLDITALIC</p>
+<p>StringEffect</p>
+<p>——字符串的影响。 有效值为： NONE, SHADOW and BORDER.</p>
+<p>FontEffectColor</p>
+<p>——StringEffect 的颜色。 与 SolidColor 相同，颜色载以同样的方式： RGB(A)。</p>
+<p>StringCase</p>
+<p>——设置字符串的”案件”。 有效的值是NONE, UPPER, LOWER, PROPER。</p>
+<p>Scale</p>
+<p>——伸缩因子的测量到的值。 测量到的值是 划分 为规模值因此为了获得 1000年倍较小值只是集规模为 1000年。如果缩放值有小数点 （如： 1000.0) 所得到的测量的值显示为浮动点与一个十进制值。</p>
+<p>AutoScale</p>
+<p>——如果设置为 1，值自动缩放。 此设置将覆盖规模。 值是自动后缀与 T、 G、 M 或 k 取决于它多少缩放。</p>
+<p>percentual</p>
+<p>——如果设置为 1，值将显示为一个百分比。</p>
+<p>NumOfDecimals</p>
+<p>——显示值中使用的小数位数。</p>
+<p>Text</p>
+<p>——显示的文本。 在字符串中使用 %1，以显示测量的值。 如果这绑定到几个措施只是使用 %2，%3 等为不同的值。</p>
+<p>ClipString</p>
+<p>——如果计量器的宽度设置为 1 修剪字符串。 一个省略号 (…) 将被添加到字符串的末尾。必须指定宽度和高度。是否足够大，以便另一行文本的高度它会使文本换行分成两个或多个行的而不是使用省略号。</p>
+<p>Angle</p>
+<p>——这定义文本的角度。 给出以弧度表示值。 请注意大小和文本的位置仍计算文本是水平。</p>
+<p>Examples:<br>[MeasureDate]</p>
+<p>Measure=Time</p>
+<p>[MeterDate]</p>
+<p>MeasureName=MeasureDate</p>
+<p>Meter=STRING</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>FontColor=0,0,0,255</p>
+<p>FontFace=“Trebuchet MS”</p>
+<p>FontSize=20</p>
+<p>StringEffect=BORDER</p>
+<p>FontEffectColor=255,255,255,255</p>
+<p>AntiAlias=1</p>
+<p>音乐播放<br>[Sound]</p>
+<p>PLAY [soundfile]</p>
+<p>——播放指定的声音一次。</p>
+<p>PLAYLOOP [soundfile]</p>
+<p>——循环播放指定的声音。</p>
+<p>PLAYSTOP</p>
+<p>——停止播放声音。</p>
+<p>Example:<br>——这会创建一个按钮，在单击时播放”beep.wav”。</p>
+<p>[BeeperButton]</p>
+<p>Meter=Button</p>
+<p>ButtonImage=button.png</p>
+<p>ButtonCommand=PLAY #SKINSPATH#Beeper\Sounds\beep.wav</p>
+<p>控制 Rainmeter<br>[Bangs]</p>
+<p>——Rainmeter也可以控制的！邦命令。阿爆炸是一个特殊的命令可以执行更改应用程序中的东西。您可以使用在各种行动Rainmeter了，或他们运行在命令行给予作为Rainmeter.exe论点爆炸。</p>
+<p>请注意，[]意味着你必须提供的爆炸参数（不包括[] -字符）。的（）表示该参数是没有必要的。</p>
+<p>大多数！邦斯作为可选参数还配置。如果配置大爆炸定义只适用于特定的配置。如果它没有得到的！邦被送到电流（皮肤）或第（命令行）配置。使用*作为配置的名称将其发送给所有configs。</p>
+<p>!RainmeterShow (Config)</p>
+<p>—</p>
+<p>—显示 Rainmeter 窗口。</p>
+<p>!RainmeterHide (Config)</p>
+<p>——隐藏 Rainmeter-窗口。</p>
+<p>!RainmeterToggle (Config)</p>
+<p>——Rainmeter 窗口之间切换。</p>
+<p>!RainmeterRefresh (Config)</p>
+<p>——重新加载配置文件。 该参数是可选的。 如果未指定当前配置被重新加载。 已加载的配置列表中必须存在配置和 IniFile。</p>
+<p>!RainmeterRedraw (Config)</p>
+<p>——强制将重绘的窗口。 这也将更新所有 meters。</p>
+<p>!RainmeterHideMeter [Meter] (Config)</p>
+<p>——隐藏给定的表。 请注意隐藏表不会停止测量，您还需要禁用度量值，如果你不想花费额外的 CPU 周期，测试。</p>
+<p>!RainmeterShowMeter [Meter] (Config)</p>
+<p>——显示给定的表，如果它被隐藏。</p>
+<p>!RainmeterToggleMeter [Meter] (Config)</p>
+<p>——切换给定表的可见性。</p>
+<p>!RainmeterMoveMeter [X] [Y] [Meter] (Config)</p>
+<p>——移动给定的表（即不是窗口，但米）到新的位置。</p>
+<p>!RainmeterDisableMeasure [Measure] (Config)</p>
+<p>——禁用给定的监测。</p>
+<p>!RainmeterEnableMeasure [Measure] (Config)</p>
+<p>——开启指定的监测。</p>
+<p>!RainmeterToggleMeasure [Measure] (Config)</p>
+<p>——切换给定措施的状态（即禁用/启用）。</p>
+<p>!RainmeterActivateConfig [Config] [Ini-file]</p>
+<p>——激活新配置的 ini 文件。 该 ini 文件是就该文件的名称，并不包括路径。</p>
+<p>!RainmeterDeactivateConfig [Config]</p>
+<p>——停用配置的 ini 文件。</p>
+<p>!RainmeterToggleConfig [Config] [Ini-file]</p>
+<p>——切换配置的 ini 文件。</p>
+<p>!RainmeterMove [X] [Y] (Config)</p>
+<p>——移动到新的窗口位置。</p>
+<p>!RainmeterZPos [POS] (Config)</p>
+<p>——更改窗口的 z 位置。 -2 = OnDesktop，-1 = OnBottom，0 = 正常，1 = OnTop，2 = 最顶层。</p>
+<p>!RainmeterAbout</p>
+<p>——打开关于对话框。</p>
+<p>!RainmeterLsBoxHook [Config]</p>
+<p>——lsBox 的特殊邦。 请注意您必须提供作为参数配置的名称。</p>
+<p>!RainmeterResetStats</p>
+<p>——重置统计信息。</p>
+<p>!RainmeterPluginBang “[MeasureName] [Arguments]”</p>
+<p>——发送到一个插件的一个邦。 该参数必须在引号内。 在 MeasureName 中定义处理该插件，该插件。参数依赖于该插件。</p>
+<p>!Execute</p>
+<p>——特别 ！ 可以被用来合并几个邦 ！ 一起 bangs。 在 ！ 重击用分隔 [和]-字符。 您还可启动此应用程序 （！ 执行 [C:\Windows\Notepad.exe])</p>
+<p>!RainmeterQuit</p>
+<p>——退出 Rainmeter。</p>
+<p>!RainmeterSetVariable [Variable] [Value] (Config)</p>
+<p>——设置一个新值的变量。 米或度量值使用变量的位置，必须启用动态变量 (DynamicVariables = 1)。可以使用公式，括在括号中。 与所有一样 ！ 男孩，引号必须使用该参数周围，如果有空格： ！ RainmeterSetVariable VarName”(# SCREENAREAWIDTH # 10)”</p>
+<p>!RainmeterRefreshApp</p>
+<p>——的所有外观的完全刷新并重新加载配</p>
+<p>置和 Rainmeter.ini 设置的列表。这是”全部刷新”相同的系统任务栏的上下文菜单。不是相同 ！ RainmeterRefresh [配置 | *]，它可用于使 Rainmeter 看到一个新的文件夹添加到 \Skins 的用户或进程。</p>
+<p>!RainmeterSetTransparency [AlphaAmount] (Config)</p>
+<p>——外观的透明度从集 0 （不可见的） 到 255 （不透明）。</p>
+<p>!RainmeterShowFade (Config), !RainmeterHideFade (Config), !RainmeterToggleFade (Config)</p>
+<p>——显示或隐藏当前或指定 (Config) 皮肤使用一个”淡出”效果。 在淡入淡出的速度由在”FadeDuration =”设置为 Rainmeter.ini 的皮肤。</p>
+<p>Rainmeter 插件是导出 （这是不需要导出所有这些） 这些函数的 DLL：</p>
+<p>UINT Initialize(HMODULE instance, LPCTSTR iniFile, LPCTSTR section, UINT id) ——</p>
+<p>void Finalize (HMODULE 实例，UINT id) ——</p>
+<p>UINT Update(UINT id)</p>
+<p>双 Update2(UINT id)</p>
+<p>LPCTSTR GetString(UINT id, UINT flags)</p>
+<p>度量值初始化时调用此 初始化 函数。 该函数返回的最大值，可以测量。 如果最大值是未知函数应返回 0。该插件还可以自己设置，可以从该 iniFile 和给作为参数初始化函数部分加载。 id 参数用于标识个别措施，如果有几个都使用相同的插件。</p>
+<p>删除度量值时，调用 Finalize。</p>
+<p>更新 更新周期每一次调用 （通常一次每秒)。 该函数返回测量到的值。 Update2 是，如果度量值，返回值为负，则可以使用该函数的替代版本。</p>
+<p>GetString 计需要作为字符串值时调用。 如果没有执行此函数返回由 更新 的值会自动转换为字符串。</p>
+<p>请检查 Rainmeter 源有关如何实现一个插件的示例。</p>
+<p>[AdvancedCPU Plugin]</p>
+<p>Plugin=Plugins/AdvancedCPU.dll</p>
+<p>CPUInclude</p>
+<p>——的进程名名单中包含了CPU测量。 的名字(“——“-分号分隔字符）。 该清单将覆盖包括排除。</p>
+<p>CPUExclude</p>
+<p>——进程名称的列表被排除CPU的测量。 的名字(“——“-分号分隔字符）。 该清单包括：必须是空的东西排除在外。</p>
+<p>TopProcess</p>
+<p>——值2返回的进程了自上次更新最CPU时间的名称。值为1返回该进程的CPU时间。请注意，这将返回CPU时间，而不是百分比。如果你一次测量值每秒可以规模100000的价值得到的百分比，但你应该注意，如果值是无法测量excatly每秒一次（喜欢它，因为通常不能在 Windows计时器是不准确的），你可能获取值大于100％。</p>
+<p>例如：<br>——显示名称和CPU使用率最高的进程：</p>
+<p>[MeasureTopProcess]</p>
+<p>Measure=Plugin</p>
+<p>Plugin=Plugins\AdvancedCPU.dll</p>
+<p>TopProcess=2</p>
+<p>CPUExclude=Idle</p>
+<p>[MeasureTopProcess2]</p>
+<p>Measure=Plugin</p>
+<p>Plugin=Plugins\AdvancedCPU.dll</p>
+<p>TopProcess=1</p>
+<p>CPUExclude=Idle</p>
+<p>[MeterTopProcess]</p>
+<p>Meter=STRING</p>
+<p>X=0</p>
+<p>Y=0</p>
+<p>MeasureName=MeasureTopProcess</p>
+<p>MeasureNam</p>
+<p>e2=MeasureTopProcess2</p>
+<p>Text=”%2 (%1%)”</p>
+<p>NumOfDecimals=1</p>
+<p>Scale=100000</p>
+<p>[iTunes (v1.001) Plugin]</p>
+<p>Plugin=Plugins/iTunesPlugin.dll</p>
+<p>——此插件可以用于远程控制 iTunes，并从中获取信息。</p>
+<p>——因为讨厌iTunes，所以不翻译</p>
+<p>Examples:<br>[MeasurePlay]</p>
+<p>Measure=Plugin</p>
+<p>Plugin=Plugins\iTunesPlugin.dll</p>
+<p>Command=Play</p>
+<p>[MeterPlay]</p>
+<p>Meter=IMAGE</p>
+<p>X=40</p>
+<p>Y=110</p>
+<p>ImageName=img\play.png</p>
+<p>LeftMouseDownAction=!execute [!RainmeterPluginBang “MeasurePlay”]</p>
+<p>[MeasureCurrentTrackArtwork]</p>
+<p>Measure=Plugin</p>
+<p>Plugin=Plugins\iTunesPlugin.dll</p>
+<p>Command=GetCurrentTrackArtwork</p>
+<p>DefaultArtwork=img\defaultartwork.png</p>
+<p>[MeterCurrentTrackArtwork]</p>
+<p>Meter=IMAGE</p>
+<p>X=170</p>
+<p>Y=10</p>
+<p>W=80</p>
+<p>H=80</p>
+<p>ImageName=”%1”</p>
+<p>MeasureName=MeasureCurrentTrackArtwork</p>
+<p>[MBM5 Plugin]</p>
+<p>Plugin=Plugins/MBM5Plugin.dll<br>————————————————<br>版权声明：本文为CSDN博主「Aenm」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44567078/article/details/109264686">https://blog.csdn.net/qq_44567078/article/details/109264686</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/01/%E9%9B%A8%E6%BB%B4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-中国菜刀" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1107,83 +1976,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/08/25/%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向切面编程AOP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/">面向切面编程AOP</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/" class="archive-article-date">
-  	<time datetime="2021-08-25T07:32:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下内容摘自：https:blog.csdn.netqq_42539533articledetails90551738?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162987660316780269849659%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=162987660316780269849659&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduend~default-2-90551738.pc_search_similar&amp;utm_term=AOP%E7%BC%96%E7%A8%8B&amp;spm=1018.2226.3001.4187</p>
-<p>并结合自己的理解</p>
-<h1 id="一、面向切面编程AOP"><a href="#一、面向切面编程AOP" class="headerlink" title="一、面向切面编程AOP"></a>一、面向切面编程AOP</h1><h3 id="AOP介绍"><a href="#AOP介绍" class="headerlink" title="AOP介绍"></a>AOP介绍</h3><p>AOP（Aspect Oriented Programming），即面向切面编程，可以说是OOP（Object Oriented Programming）的完善或者二次利用，在面向对象的代码执行过程中<strong>动态嵌入其他代码</strong>。<br>　　面向切面编程是面向对象中的一种方式而已。在代码执行过程中，动态嵌入其他代码，叫做面向切面编程。常见的使用场景：</p>
-<p>1.日志</p>
-<p>2.事物 </p>
-<p>3.数据库操作</p>
-<p>面向切面编程，就是将交叉业务逻辑封装成切面，利用AOP的功能将切面织入到主业务逻辑中。所谓交叉业务逻辑是指，通用的，与主业务逻辑无关的代码，如安全检查，事物，日志等。若不使用AOP，则会出现代码纠缠，即交叉业务逻辑与主业务逻辑混合在一起。这样，会使业务逻辑变得混杂不清。<br>举个例子：银行系统取款会有一个流程查询也会有一个流程</p>
-<p><img src="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/pic_1.png" alt="img"></p>
-<p>这两者，都有一个相同的验证用户的流程<br>　　这个时候 AOP 就可以来帮我们简化代码了，首先，写代码的时候可以不写这个验证用户的步骤，即完全不考虑验证用户，写完之后，在另外一个地方，写好验证用户的代码，然后告诉 Spring 你要把这一段代码加到哪几个地方，Spring就会帮你加过去，这里还只是两个地方，如果有多个控制流，这样写代码会大大节约时间。<br>　　而且 AOP 不会把代码加到源文件里，但是它会正确的影响最终的机器代码。<br>　　<br>上面那个 验证用户 的方框，我们可以把它当成一块<strong>板子</strong>，在这块板子上插入一些控制流程，这块板子就可以当成是 AOP 中的一个切面。所以 AOP 的本质是在一系列的纵向的控制流程中，把那些相同的子流程提取成一个横向的面，把纵向流程画成一条直线，而 AOP 相当于把相同的地方连起来了</p>
-<p>再来一幅图理解一下：</p>
-<p><img src="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/pic_2.png" alt="img"></p>
-<p>这个验证用户的子流程 就成了一条直线，也可以理解成一个切面，这里只插了三个流程，如果其他流程也需要这个子流程，也可以插到其他地方去。</p>
-<h1 id="AOP术语"><a href="#AOP术语" class="headerlink" title="AOP术语"></a>AOP术语</h1><p><img src="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/pic_3.png" alt="image-20210825154140037"></p>
-<h1 id="AOP的实现方式"><a href="#AOP的实现方式" class="headerlink" title="AOP的实现方式"></a>AOP的实现方式</h1><p><img src="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/pic_4.png" alt="image-20210825154202743"></p>
-<p>以上为摘抄内容</p>
-<h1 id="二、自己的理解"><a href="#二、自己的理解" class="headerlink" title="二、自己的理解"></a>二、自己的理解</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/25/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8BAOP/">展开全文 >></a>
         </p>
       
 
