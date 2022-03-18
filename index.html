@@ -154,6 +154,196 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mock-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/11/mock-js/">mock.js</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/11/mock-js/" class="archive-article-date">
+  	<time datetime="2022-03-11T13:43:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<p><a target="_blank" rel="noopener" href="http://mockjs.com/">mock官网</a></p>
+<h3 id="一、请求的建立"><a href="#一、请求的建立" class="headerlink" title="一、请求的建立"></a>一、请求的建立</h3><p>位置：src-》api</p>
+<h4 id="1-引用工具包中的request"><a href="#1-引用工具包中的request" class="headerlink" title="1.引用工具包中的request"></a>1.引用工具包中的request</h4><p><img src="/2022/03/11/mock-js/image-20220316214812467.png" alt="image-20220316214812467"></p>
+<h4 id="2-写请求"><a href="#2-写请求" class="headerlink" title="2.写请求"></a>2.写请求</h4><p><img src="/2022/03/11/mock-js/image-20220316214834044.png" alt="image-20220316214834044"></p>
+<h4 id="3-注意"><a href="#3-注意" class="headerlink" title="3.注意"></a>3.注意</h4><p>如果是新增js文件需要mock包的==index.js==文件里进行新增配置</p>
+<p><img src="/2022/03/11/mock-js/image-20220316215047816.png" alt="image-20220316215047816"></p>
+<h3 id="二、组件中调用请求"><a href="#二、组件中调用请求" class="headerlink" title="二、组件中调用请求"></a>二、组件中调用请求</h3><p><img src="/2022/03/11/mock-js/image-20220316215153225.png" alt="image-20220316215153225"></p>
+<p>直接调用api中的请求方法（建议异步）</p>
+<h3 id="三、mock拦截请求"><a href="#三、mock拦截请求" class="headerlink" title="三、mock拦截请求"></a>三、mock拦截请求</h3><p>在mock包中在对应js文件中找到==module.exports==新增对象即可（无需导入）</p>
+<p><img src="/2022/03/11/mock-js/image-20220316215443536.png" alt="image-20220316215443536"></p>
+<p>可自定义返回规定格式数据数据</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">code:<span class="number">20000</span><span class="comment">//普通</span></span><br><span class="line"> <span class="string">&#x27;name|1-10&#x27;</span>: <span class="string">&#x27;★&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;array|1-10&#x27;</span>: [</span><br><span class="line">      <span class="string">&#x27;Hello&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;Mock.js&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;!&#x27;</span></span><br><span class="line">      ]</span><br></pre></td></tr></table></figure>
+
+<p>会得到类似于这样下面这样的返回数据</p>
+<p><img src="/2022/03/11/mock-js/image-20220316220328187.png" alt="image-20220316220328187"></p>
+<p><img src="/2022/03/11/mock-js/image-20220316220627017.png" alt="image-20220316220627017"></p>
+<p><img src="/2022/03/11/mock-js/image-20220316220024741.png" alt="image-20220316220024741"></p>
+<p>具体返回数据和其他类型就参考官方示例</p>
+<p><a target="_blank" rel="noopener" href="http://mockjs.com/examples.html">http://mockjs.com/examples.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">经验</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/11/mock-js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-DDD-领域驱动设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/21/DDD-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">DDD_领域驱动设计</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/21/DDD-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2022-01-21T08:37:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="一、DDD的定义"><a href="#一、DDD的定义" class="headerlink" title="一、DDD的定义"></a>一、DDD的定义</h2><h3 id="1、普遍定义"><a href="#1、普遍定义" class="headerlink" title="1、普遍定义"></a>1、普遍定义</h3><ul>
+<li>领域驱动是以业务精准定位的数据模型驱动模式开发（这里的业务模型不一定是最终的数据存储的数据模型）。</li>
+<li>由业务专家对业务的专业解读，对业务进行区域划分，对不同区域进行不同的业务建模，使用这些业务模型进行业务驱动开发。</li>
+<li>使用面向对象进行编程，领域对象除了属性还有自己的功能（方法）。这样在完成一系列业务逻辑的时候，可以把注意力放在领域对象之间的逻辑关系，减少领域对象的内部功能实现。</li>
+</ul>
+<h3 id="2、代码工程分层"><a href="#2、代码工程分层" class="headerlink" title="2、代码工程分层"></a>2、代码工程分层</h3><p>常见代码工程分层为（调用顺序从上往下）：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|-- interface （对外接口层）</span><br><span class="line">|-- application （业务上下文，组织领域对象功能调用，以及一些不归属于领域对象功能的其他功能）</span><br><span class="line">|-- domain （领域模型层，面向对象提供领域功能）</span><br><span class="line">|-- infrastructure （基础建设层，负责领域对象中的数据存储和读取）</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、优缺点"><a href="#二、优缺点" class="headerlink" title="二、优缺点"></a>二、优缺点</h2><h3 id="1、好处"><a href="#1、好处" class="headerlink" title="1、好处"></a>1、好处</h3><ul>
+<li>由于对业务进行了专业的领域划分，使得业务逻辑更加清晰，正确的业务归类有利于后续业务扩展。</li>
+<li>领域对象面向对象编程，使得代码工程更加高内聚。将业务逻辑分散到各个领域对象中，使得对象外部代码更加精减。</li>
+</ul>
+<h3 id="2、坏处"><a href="#2、坏处" class="headerlink" title="2、坏处"></a>2、坏处</h3><ul>
+<li>要求专业、专业、专业的领域划分，这个是领域驱动的首要前提，也是最大的难度和挑战。需要参与人员（至少设计人员）有专业知识。因为代码实现的面向对象编程（高内聚），如果设计不当，带来的麻烦是相当大的。</li>
+<li>面向对象编程，使得业务逻辑分散到各个领域模型中，对于后续接手且没有完备的文档或代码注释的人来说，就是灾难，难以快速了解到整体业务逻辑。</li>
+<li>领域驱动设计中，领域模型是面向对象设计，自然持久层实现就是JPA标准。而JPA对于复杂查询，设计不好容易有性能问题。对于简单系统，JPA是友好的选择，但复杂的系统实现就不见得了，而领域驱动设计就是针对复杂系统而言的，所以在数据持久化方面，如果选择JPA，则需要面临JPA的问题，如果选择MyBatis这种SQL封装的框架的话，则需要在模型转换上多花些处理。</li>
+</ul>
+<h2 id="二、领域驱动模型和MVC模型有什么区别"><a href="#二、领域驱动模型和MVC模型有什么区别" class="headerlink" title="二、领域驱动模型和MVC模型有什么区别"></a>二、领域驱动模型和MVC模型有什么区别</h2><h3 id="1、代码工程"><a href="#1、代码工程" class="headerlink" title="1、代码工程"></a>1、代码工程</h3><p>MVC代码架构说的是”模型层-视图层-控制层“，按数据流来说，应该是 控制层-数据层-视图层，这种分层合适简单的业务逻辑处理。</p>
+<h3 id="2、MVC的演变"><a href="#2、MVC的演变" class="headerlink" title="2、MVC的演变"></a>2、MVC的演变</h3><p>随着业务越来越复杂，前后端分离的出现，MVC已经演变成了CSMD（常见国内项目架构），视图层剥离成独立的前端项目（可以是APP或是PC或是H5），多出了service层，专门进行业务逻辑处理，如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|-- controller （请求控制层，对外暴露接口）</span><br><span class="line">|-- service （业务逻辑层）</span><br><span class="line">|-- model （持久对象）</span><br><span class="line">|-- dao （持久化层）</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、对比"><a href="#3、对比" class="headerlink" title="3、对比"></a>3、对比</h3><p>从项目结构来看，可以类似找到一一对应的分层： - 有统一对外接口分层 - 有业务层。但领域模型业务层是简单的，而MVC模型是复杂的。 - 有模型层。领域驱动的模型层是面向对象，含有对象功能，是充血模型。而MVC模型是JavaBean，只有属性，是贫血模型。 - 有持久化层</p>
+<p>通过上面的比较，主要的区别在于MVC模型的业务逻辑集中在service层，而领域驱动模型的业务逻辑主要在model层，少量在application层。</p>
+<h2 id="三、我理解的领域驱动设计"><a href="#三、我理解的领域驱动设计" class="headerlink" title="三、我理解的领域驱动设计"></a>三、我理解的领域驱动设计</h2><h3 id="1、解决的问题"><a href="#1、解决的问题" class="headerlink" title="1、解决的问题"></a>1、解决的问题</h3><ul>
+<li>解决复杂业务逻辑编写问题。通过领域划分，分散业务逻辑编写，在一个领域内专注领域内业务处理。</li>
+<li>领域驱动模式使用面向对象的模式来编程，使得代码更加语义化。</li>
+</ul>
+<h3 id="2、需要切换到领域驱动模式吗"><a href="#2、需要切换到领域驱动模式吗" class="headerlink" title="2、需要切换到领域驱动模式吗"></a>2、需要切换到领域驱动模式吗</h3><p>这里思考下：领域驱动设计模式提出已经有好多年了，为什么没有流行起来? - 领域驱动有一个前提，那就是专业建模。其实项目一般都做了模块划分，这里的划分是一样的意思,只是够不够专业而已。 - 现微服务化的出现，也是对业务领域划分的一种体现。 - 领域驱动一个关键的点是model是包含行为的。这个在MVC模式中，就是service + model层两层。 - 属性和行为分离，使得可以并行开发，不会存在不同人提交相同的代码文件而造成冲突。</p>
+<p>综上所述，领域驱动除了面向对象编程外，特色设计模式在MVC模式中也能看到影子。但在model面向对象编程不利于团队协作开发，也不见得是个好选择。</p>
+<h3 id="３、领域驱动模式有什么可以借鉴学习"><a href="#３、领域驱动模式有什么可以借鉴学习" class="headerlink" title="３、领域驱动模式有什么可以借鉴学习"></a>３、领域驱动模式有什么可以借鉴学习</h3><ul>
+<li>复杂问题简单化，简化单位功能，通过组合的方式来表达复杂功能</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79859285">https://zhuanlan.zhihu.com/p/79859285</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/21/DDD-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-head" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -237,7 +427,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、基本工具"><a href="#一、基本工具" class="headerlink" title="一、基本工具"></a>一、基本工具</h1><p>采用<code>宝塔面板</code>+<code>Xshell7</code>+<code>阿里云服务器</code>实现。</p>
+        <p>[TOC]</p>
+<h1 id="一、基本工具"><a href="#一、基本工具" class="headerlink" title="一、基本工具"></a>一、基本工具</h1><p>采用<code>宝塔面板</code>+<code>Xshell7</code>+<code>阿里云服务器</code>实现。</p>
+<p>宝塔安全入口：<a target="_blank" rel="noopener" href="http://120.79.154.158:8888/2badfb2c">http://120.79.154.158:8888/2badfb2c</a></p>
 <h1 id="二、部署vue-SpringBoot"><a href="#二、部署vue-SpringBoot" class="headerlink" title="二、部署vue+SpringBoot"></a>二、部署vue+SpringBoot</h1><h2 id="1-阿里云服务器"><a href="#1-阿里云服务器" class="headerlink" title="1.阿里云服务器"></a>1.阿里云服务器</h2><p>使用的是阿里轻量服务器 </p>
 <p>120.79.154.158</p>
 <p>CenetOS7.6（Linux）</p>
@@ -274,7 +466,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bt default</span><br></pre></td></tr></table></figure>
 
 <p>直接查询内网外网地址，使用默认账号密码进入</p>
-<p><font color="red"><strong>已经绑定了手机(18223558130)</strong></font></p>
+<p><font color="red"><strong>已经绑定了手机(18002306159)</strong></font></p>
 <h2 id="3-宝塔面板"><a href="#3-宝塔面板" class="headerlink" title="3.宝塔面板"></a>3.宝塔面板</h2><p>首页</p>
 <p><img src="/2022/01/16/PFM2/image-20220116172545412.png" alt="image-20220116172545412"></p>
 <h4 id="软件商店下载内容"><a href="#软件商店下载内容" class="headerlink" title="软件商店下载内容"></a>软件商店下载内容</h4><p><img src="/2022/01/16/PFM2/image-20220116172618045.png" alt="image-20220116172618045"></p>
@@ -308,7 +500,15 @@
 <li>填写信息</li>
 </ol>
 <p><img src="/2022/01/16/PFM2/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,sasdasd0,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>然后访问ip或者域名即可。</p>
-<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><h2 id="1-忘记密码"><a href="#1-忘记密码" class="headerlink" title="1.忘记密码"></a>1.忘记密码</h2><p><a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-1172-1-1.html">https://www.bt.cn/bbs/thread-1172-1-1.html</a></p>
+<p>==此处无论你配置中的端口号是多少，此处输入的项目端口将为最终使用的端口，记得在阿里云中安全处新增规则==</p>
+<div style="color:red">记得刷新一下检查最后是否成功跑起来,知道查看日志发现项目成功跑起来。如下图</div>
+
+
+
+<p><img src="/2022/01/16/PFM2/image-20220120194914201.png"></p>
+<h1 id="三、数据库管理"><a href="#三、数据库管理" class="headerlink" title="三、数据库管理"></a>三、数据库管理</h1><p>使用宝塔的phpMyAdmin进行管理</p>
+<p><img src="/2022/01/16/PFM2/Z4ZNLAO%60GI%5DF6GPYA_%5BP%5BA0.png" alt="img"></p>
+<h1 id="四、其他操作"><a href="#四、其他操作" class="headerlink" title="四、其他操作"></a>四、其他操作</h1><h2 id="1-忘记密码"><a href="#1-忘记密码" class="headerlink" title="1.忘记密码"></a>1.忘记密码</h2><p><a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-1172-1-1.html">https://www.bt.cn/bbs/thread-1172-1-1.html</a></p>
 <p>或者手机验证，随你</p>
 <h2 id="2-需要使用password登录"><a href="#2-需要使用password登录" class="headerlink" title="2.需要使用password登录"></a>2.需要使用password登录</h2><p>先用public key 的方式连接上服务器后输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
@@ -713,142 +913,9 @@
 
 
   
-    <article id="post-PTA题目集/相同的树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>6-1 相同的树</strong> </p>
-<p>给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。</p>
-<p>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p>
-<p>两棵树上的节点数目都在范围 [0, 100] 内 -−104 &lt;= Node.val &lt;= 104</p>
-<h3 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在这里描述函数接口。例如：</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc  = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String str1 = sc.nextLine();</span><br><span class="line">        String str2 = sc.nextLine();</span><br><span class="line">        Tree tree1 = <span class="keyword">new</span> Tree(str1);</span><br><span class="line">        Tree tree2 = <span class="keyword">new</span> Tree(str2);</span><br><span class="line">        System.out.println(isSameTree(tree1.root, tree2.root));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 请在这里填写答案 */</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><p><img src="https://images.ptausercontent.com/1db593b7-6669-4f3e-b697-78af6bae9e57.jpg" alt="ex1.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 0 0 0 0</span><br><span class="line">1 2 3 0 0 0 0</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true</span><br></pre></td></tr></table></figure>
-
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><p><img src="https://images.ptausercontent.com/9373373c-4751-44e3-b2b2-c0b79e077259.jpg" alt="ex2.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 0 0 0</span><br><span class="line">1 0 2 0 0</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">false</span><br></pre></td></tr></table></figure>
-
-<h3 id="输入样例3："><a href="#输入样例3：" class="headerlink" title="输入样例3："></a>输入样例3：</h3><p><img src="https://images.ptausercontent.com/f7ac995b-3064-4fb1-8979-4d120105e305.jpg" alt="ex3.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 1 0 0 0 0</span><br><span class="line">1 1 2 0 0 0 0</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例3："><a href="#输出样例3：" class="headerlink" title="输出样例3："></a>输出样例3：</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">false</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> isSame = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(p.val==q.val)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p.left!=<span class="keyword">null</span>&amp;&amp;q.left!=<span class="keyword">null</span>)</span><br><span class="line">        isSame &amp;= isSameTree(p.left,q.left);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(p.right!=<span class="keyword">null</span>&amp;&amp;q.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                isSame &amp;= isSameTree(p.right,q.right);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>((p.left!=<span class="keyword">null</span>&amp;&amp;q.left==<span class="keyword">null</span>)||(q.left!=<span class="keyword">null</span>&amp;&amp;p.left==<span class="keyword">null</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>((p.right!=<span class="keyword">null</span>&amp;&amp;q.right==<span class="keyword">null</span>)||(q.right!=<span class="keyword">null</span>&amp;&amp;p.right==<span class="keyword">null</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> isSame;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/09/PTA%E9%A2%98%E7%9B%AE%E9%9B%86/%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PTA题目集/特殊的圣诞树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>7-3 特殊的圣诞树</strong></p>
-<p>圣诞节快到了，每个人都在建造圣诞树，你也不例外。然而，你是特别的，你想建立一棵特别的。你决定建立一个二叉树的圣诞树，并把它的根悬挂在天花板上。对于一颗二叉树，最上面的节点称为根节点，树中的每个节点都可能有0、1或2个子节点，没有子节点的节点称为叶子。除了根节点没有父节点之外，每个节点都有且只有一个父节点。你买了一个装饰包，里面装了一些装饰品，你想用它们来装饰树上所有的叶子，由于被你房间的高度限制，所以树不能比你的房屋高。树的高度是从根到最远叶子的路径上的边数。请注意，每个叶子必须由一个装饰品装饰(每个装饰品可以装饰1个叶子)，你必须使用所有的装饰品装饰完你的圣诞树，你需要设计一颗特别的圣诞树，即高度和叶子数受限制的且要尽可能多节点的二叉树，你能找到最特别的树吗？</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>您的程序将在一个或多个测试用例上进行测试。输入的第一行将是单个整数T (1 ≤ T ≤ 10,000)，表示测试用例的数量。接下来是T组测试用例。每个测试用例将包括一行由空格分隔的2个整数H和L (0≤H ≤1,000,000,000,1 ≤ L ≤ 1,000,000,000且1 ≤ L ≤ 2^H) ,分别代表最大可能的高度和树叶的数量。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>对于每个测试用例，打印一个包含Case n: ans的单行(其中n是测试用例的编号,ans是最特殊的圣诞树的节点数)，具体看样例。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">3 2</span><br><span class="line">3 3结尾无空行</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case 1: 7</span><br><span class="line">Case 2: 9结尾无空行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> T = input.nextInt();</span><br><span class="line">        <span class="keyword">int</span>[] H = <span class="keyword">new</span> <span class="keyword">int</span>[T];</span><br><span class="line">        <span class="keyword">int</span>[] L = <span class="keyword">new</span> <span class="keyword">int</span>[T];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; T; i++) &#123;</span><br><span class="line">            H[i] = input.nextInt();</span><br><span class="line">            L[i] = input.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; T; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> n2 = L[i] - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> now = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (H[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;Case &quot;</span> + i + <span class="number">1</span> + <span class="string">&quot;: &quot;</span> + ans);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; H[i]; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(n2==<span class="number">0</span>)&#123;</span><br><span class="line">                    ans+=(H[i]-now+<span class="number">1</span>)*L[i];</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; Math.pow(<span class="number">2</span>, now - <span class="number">1</span>); k++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (n2 == <span class="number">0</span>) &#123;</span><br><span class="line">                        ans+=<span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    ans+=<span class="number">2</span>;</span><br><span class="line">                    n2--;</span><br><span class="line">                &#125;</span><br><span class="line">                now++;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;Case &quot;</span> + (i + <span class="number">1</span>) + <span class="string">&quot;: &quot;</span> + ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/09/PTA%E9%A2%98%E7%9B%AE%E9%9B%86/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%9C%A3%E8%AF%9E%E6%A0%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -941,6 +1008,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

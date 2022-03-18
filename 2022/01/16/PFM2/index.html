@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://wangmou-niubi.github.io">
   <title>PFM2 | 犯罪嫌疑人王某</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、基本工具采用宝塔面板+Xshell7+阿里云服务器实现。 二、部署vue+SpringBoot1.阿里云服务器使用的是阿里轻量服务器  120.79.154.158 CenetOS7.6（Linux） 账号root 密钥PFM2（本地密钥指纹）  2.Xshell71.在轻量服务器开启本地密钥指纹后开放端口  2.新建会话  名称随便起，主机就是120.79.154.158  使用本地密钥登陆">
+  <meta name="description" content="[TOC] 一、基本工具采用宝塔面板+Xshell7+阿里云服务器实现。 宝塔安全入口：http:&#x2F;&#x2F;120.79.154.158:8888&#x2F;2badfb2c 二、部署vue+SpringBoot1.阿里云服务器使用的是阿里轻量服务器  120.79.154.158 CenetOS7.6（Linux） 账号root 密钥PFM2（本地密钥指纹）  2.Xshell71.在轻量服务器开启本地密钥指纹">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PFM2">
 <meta property="og:url" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/index.html">
 <meta property="og:site_name" content="犯罪嫌疑人王某">
-<meta property="og:description" content="一、基本工具采用宝塔面板+Xshell7+阿里云服务器实现。 二、部署vue+SpringBoot1.阿里云服务器使用的是阿里轻量服务器  120.79.154.158 CenetOS7.6（Linux） 账号root 密钥PFM2（本地密钥指纹）  2.Xshell71.在轻量服务器开启本地密钥指纹后开放端口  2.新建会话  名称随便起，主机就是120.79.154.158  使用本地密钥登陆">
+<meta property="og:description" content="[TOC] 一、基本工具采用宝塔面板+Xshell7+阿里云服务器实现。 宝塔安全入口：http:&#x2F;&#x2F;120.79.154.158:8888&#x2F;2badfb2c 二、部署vue+SpringBoot1.阿里云服务器使用的是阿里轻量服务器  120.79.154.158 CenetOS7.6（Linux） 账号root 密钥PFM2（本地密钥指纹）  2.Xshell71.在轻量服务器开启本地密钥指纹">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/image-20220116170202179.png">
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/image-20220116170641356.png">
@@ -27,9 +27,11 @@
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmVjbHVzZV9I,size_20,color_FFFFFF,t_70,g_asdas16">
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmVjbasdasd,color_FFFFFF,t_70,g_se,x_16">
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,sasdasd0,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/image-20220120194914201.png">
+<meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/Z4ZNLAO%60GI%5DF6GPYA_%5BP%5BA0.png">
 <meta property="og:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/image-20220116171530479.png">
 <meta property="article:published_time" content="2022-01-16T08:57:28.000Z">
-<meta property="article:modified_time" content="2022-01-16T11:23:09.705Z">
+<meta property="article:modified_time" content="2022-01-21T11:04:31.343Z">
 <meta property="article:author" content="王馨">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wangmou-niubi.github.io/2022/01/16/PFM2/image-20220116170202179.png">
@@ -188,7 +190,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、基本工具"><a href="#一、基本工具" class="headerlink" title="一、基本工具"></a>一、基本工具</h1><p>采用<code>宝塔面板</code>+<code>Xshell7</code>+<code>阿里云服务器</code>实现。</p>
+        <p>[TOC]</p>
+<h1 id="一、基本工具"><a href="#一、基本工具" class="headerlink" title="一、基本工具"></a>一、基本工具</h1><p>采用<code>宝塔面板</code>+<code>Xshell7</code>+<code>阿里云服务器</code>实现。</p>
+<p>宝塔安全入口：<a target="_blank" rel="noopener" href="http://120.79.154.158:8888/2badfb2c">http://120.79.154.158:8888/2badfb2c</a></p>
 <h1 id="二、部署vue-SpringBoot"><a href="#二、部署vue-SpringBoot" class="headerlink" title="二、部署vue+SpringBoot"></a>二、部署vue+SpringBoot</h1><h2 id="1-阿里云服务器"><a href="#1-阿里云服务器" class="headerlink" title="1.阿里云服务器"></a>1.阿里云服务器</h2><p>使用的是阿里轻量服务器 </p>
 <p>120.79.154.158</p>
 <p>CenetOS7.6（Linux）</p>
@@ -225,7 +229,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bt default</span><br></pre></td></tr></table></figure>
 
 <p>直接查询内网外网地址，使用默认账号密码进入</p>
-<p><font color="red"><strong>已经绑定了手机(18223558130)</strong></font></p>
+<p><font color="red"><strong>已经绑定了手机(18002306159)</strong></font></p>
 <h2 id="3-宝塔面板"><a href="#3-宝塔面板" class="headerlink" title="3.宝塔面板"></a>3.宝塔面板</h2><p>首页</p>
 <p><img src="/2022/01/16/PFM2/image-20220116172545412.png" alt="image-20220116172545412"></p>
 <h4 id="软件商店下载内容"><a href="#软件商店下载内容" class="headerlink" title="软件商店下载内容"></a>软件商店下载内容</h4><p><img src="/2022/01/16/PFM2/image-20220116172618045.png" alt="image-20220116172618045"></p>
@@ -259,7 +263,15 @@
 <li>填写信息</li>
 </ol>
 <p><img src="/2022/01/16/PFM2/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,sasdasd0,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>然后访问ip或者域名即可。</p>
-<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><h2 id="1-忘记密码"><a href="#1-忘记密码" class="headerlink" title="1.忘记密码"></a>1.忘记密码</h2><p><a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-1172-1-1.html">https://www.bt.cn/bbs/thread-1172-1-1.html</a></p>
+<p>==此处无论你配置中的端口号是多少，此处输入的项目端口将为最终使用的端口，记得在阿里云中安全处新增规则==</p>
+<div style="color:red">记得刷新一下检查最后是否成功跑起来,知道查看日志发现项目成功跑起来。如下图</div>
+
+
+
+<p><img src="/2022/01/16/PFM2/image-20220120194914201.png"></p>
+<h1 id="三、数据库管理"><a href="#三、数据库管理" class="headerlink" title="三、数据库管理"></a>三、数据库管理</h1><p>使用宝塔的phpMyAdmin进行管理</p>
+<p><img src="/2022/01/16/PFM2/Z4ZNLAO%60GI%5DF6GPYA_%5BP%5BA0.png" alt="img"></p>
+<h1 id="四、其他操作"><a href="#四、其他操作" class="headerlink" title="四、其他操作"></a>四、其他操作</h1><h2 id="1-忘记密码"><a href="#1-忘记密码" class="headerlink" title="1.忘记密码"></a>1.忘记密码</h2><p><a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-1172-1-1.html">https://www.bt.cn/bbs/thread-1172-1-1.html</a></p>
 <p>或者手机验证，随你</p>
 <h2 id="2-需要使用password登录"><a href="#2-需要使用password登录" class="headerlink" title="2.需要使用password登录"></a>2.需要使用password登录</h2><p>先用public key 的方式连接上服务器后输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
@@ -397,7 +409,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">一、基本工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%83%A8%E7%BD%B2vue-SpringBoot"><span class="toc-number">2.</span> <span class="toc-text">二、部署vue+SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">1.阿里云服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Xshell7"><span class="toc-number">2.2.</span> <span class="toc-text">2.Xshell7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.3.</span> <span class="toc-text">3.宝塔面板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%95%86%E5%BA%97%E4%B8%8B%E8%BD%BD%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">软件商店下载内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%8A%8Asql%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">创建数据库并把sql文件上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0vue%E7%9A%84%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E5%92%8Cspringboot%E7%9A%84%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.0.3.</span> <span class="toc-text">上传vue的打包文件和springboot的打包文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2vue"><span class="toc-number">2.3.0.4.</span> <span class="toc-text">部署vue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2springboot"><span class="toc-number">2.3.0.5.</span> <span class="toc-text">部署springboot</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">其他操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81"><span class="toc-number">3.1.</span> <span class="toc-text">1.忘记密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8password%E7%99%BB%E5%BD%95"><span class="toc-number">3.2.</span> <span class="toc-text">2.需要使用password登录</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">一、基本工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%83%A8%E7%BD%B2vue-SpringBoot"><span class="toc-number">2.</span> <span class="toc-text">二、部署vue+SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">1.阿里云服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Xshell7"><span class="toc-number">2.2.</span> <span class="toc-text">2.Xshell7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.3.</span> <span class="toc-text">3.宝塔面板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%95%86%E5%BA%97%E4%B8%8B%E8%BD%BD%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">软件商店下载内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%8A%8Asql%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">创建数据库并把sql文件上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0vue%E7%9A%84%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E5%92%8Cspringboot%E7%9A%84%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.0.3.</span> <span class="toc-text">上传vue的打包文件和springboot的打包文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2vue"><span class="toc-number">2.3.0.4.</span> <span class="toc-text">部署vue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2springboot"><span class="toc-number">2.3.0.5.</span> <span class="toc-text">部署springboot</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">三、数据库管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">四、其他操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81"><span class="toc-number">4.1.</span> <span class="toc-text">1.忘记密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8password%E7%99%BB%E5%BD%95"><span class="toc-number">4.2.</span> <span class="toc-text">2.需要使用password登录</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -517,6 +529,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
