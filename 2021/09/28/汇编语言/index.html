@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-cn"><head><link rel="stylesheet" type="text/css" href="/css/nerd.css"><link rel="stylesheet" type="text/css" href="/css/loadingcar.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-marcus/lib/skills.min.css"><link rel="preload" as="style" type="text/css" href="/css/nerd.css"><link rel="preload" as="font" type="font/ttf" href="/fonts/font.woff2" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><script async="" data-pjax="" src="/js/custom.js"></script><script src="/js/random.js"></script><script async="" src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script><script async="" src="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/lib/index.js"></script><script async="" data-pjax="" src="/js/linksbar.js"></script><script async="" src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>汇编语言 | 犯罪嫌疑人王某</title><meta name="author" content="王馨"><meta name="copyright" content="王馨"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="1、指令机器指令：CPU能直接识别并执行的二进制编码 汇编指令：汇编指令是机器指令的助记符，同机器指令一一对应。 指令：指令通常由操作码和地址码（操作数）两部分组成 指令集：每种CPU都有自己的汇编指令集。 汇编语言由3类指令组成。 汇编指令伪指令：没有对应的机器码，由编译器执行，计算机并不执行其他符号：如+、-、*、&#x2F;等，由编译器识别，没有对应的机器码。 原文链接：https:&#x2F;&#x2F;blog.cs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言">
+<meta property="og:url" content="https://wangmou-niubi.github.io/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="犯罪嫌疑人王某">
+<meta property="og:description" content="1、指令机器指令：CPU能直接识别并执行的二进制编码 汇编指令：汇编指令是机器指令的助记符，同机器指令一一对应。 指令：指令通常由操作码和地址码（操作数）两部分组成 指令集：每种CPU都有自己的汇编指令集。 汇编语言由3类指令组成。 汇编指令伪指令：没有对应的机器码，由编译器执行，计算机并不执行其他符号：如+、-、*、&#x2F;等，由编译器识别，没有对应的机器码。 原文链接：https:&#x2F;&#x2F;blog.cs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6403a054f144a0100779cd83.jpg">
+<meta property="article:published_time" content="2021-09-28T11:08:40.000Z">
+<meta property="article:modified_time" content="2022-01-16T11:30:38.000Z">
+<meta property="article:author" content="王馨">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/6403a054f144a0100779cd83.jpg"><link rel="shortcut icon" href="https://ezgx.site/img/avatar.png"><link rel="canonical" href="https://wangmou-niubi.github.io/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.bilicdn.tk/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.bilicdn.tk/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '汇编语言',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-16 19:30:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+setTimeout(function(){preloader.endLoading();}, 3600);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><link rel="stylesheet" href="/css/loading.css"/><script src="https://cdn.bilicdn.tk/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/"><i class="fa-fw fas fa-house-user"></i><span> 首页</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 链环</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/sites/"><i class="fa-fw fas fa-star"></i><span> 站长推荐</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 找我</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言</span></a></li><li><a class="site-page child" href="/authorqq/"><i class="fa-fw fab fa-qq"></i><span> 博主QQ</span></a></li><li><a class="site-page child" href="/authorwechat/"><i class="fa-fw fab fa-weixin"></i><span> 博主微信</span></a></li><li><a class="site-page child" href="/qqgroup/"><i class="fa-fw fas fa-user-group"></i><span> QQ群</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/ezgx"><i class="fa-fw fab fa-github"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cc/"><i class="fa-fw fab fa-creative-commons"></i><span> 协议</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://dimension.ezgx.site/"><i class="fa-fw fas fa-wand-magic-sparkles"></i><span> 主题</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://home.ezgx.site"><i class="fa-fw fas fa-house-user"></i><span> 主页</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/6403a054f144a0100779cd83.jpg')"><nav id="nav"><div id="toggle-menu"><a class="site-page"><i class="fas fa-grip-vertical"></i></a></div><span id="blog_name"><a id="site-name" href="/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.tianli0.top/%E9%A6%96%E9%A1%B5.png" width="50" height="50"/><div class="title">犯罪嫌疑人王某</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" onclick="btf.scrollToDest(0,500)"></a></center><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div></div><div id="menus"><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="nav-button console-button"><a class="link" onclick="heo.showConsole()"><i class="fas fa-circle-plus fa-xl fa-beat"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/"><i class="fa-fw fas fa-house-user"></i><span> 首页</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 链环</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/sites/"><i class="fa-fw fas fa-star"></i><span> 站长推荐</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 找我</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言</span></a></li><li><a class="site-page child" href="/authorqq/"><i class="fa-fw fab fa-qq"></i><span> 博主QQ</span></a></li><li><a class="site-page child" href="/authorwechat/"><i class="fa-fw fab fa-weixin"></i><span> 博主微信</span></a></li><li><a class="site-page child" href="/qqgroup/"><i class="fa-fw fas fa-user-group"></i><span> QQ群</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/ezgx"><i class="fa-fw fab fa-github"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cc/"><i class="fa-fw fab fa-creative-commons"></i><span> 协议</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://dimension.ezgx.site/"><i class="fa-fw fas fa-wand-magic-sparkles"></i><span> 主题</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://home.ezgx.site"><i class="fa-fw fas fa-house-user"></i><span> 主页</span></a></li></ul></div></div></div></nav><div id="post-info"><div class="post-meta__tag-list"></div><h1 class="post-title">汇编语言</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-09-28T11:08:40.000Z" title="Created 2021-09-28 19:08:40">2021-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-16T11:30:38.000Z" title="Updated 2022-01-16 19:30:38">2022-01-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>10min</span></span></div></div></div></header><div id="console"><div class="close-btn" onclick="heo.hideConsole()"><i class="fas fa-circle-xmark"></i></div><div class="console-webinfo"><div class="console-webinfo-card"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line fa-bounce"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name"><i class="fas fa-folder-open fa-beat"></i><div class="text">文章总数</div></div><div class="item-count">54</div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-clock fa-shake"></i><div class="text">建站天数</div></div><div class="item-count" id="runtimeshow" data-publishDate="2022-08-12T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-pen-to-square fa-beat"></i><div class="text">全站字数</div></div><div class="item-count">47.7k</div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-upload fa-shake"></i><div class="text">最后更新</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-06-07T03:20:54.548Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="toRandomPost()" title="随机文章"><i class="fas fa-shuffle fa-beat" style="font-size: 1rem;"></i></a></div><div class="console-btn-item"><a class="assist-btn" target="_blank" rel="noopener" href="https://travellings.cn/go.html" title="友链接力"><i class="fas fa-bus fa-beat" style="font-size: 1rem;"></i></a></div><div class="console-btn-item"><a class="assist-btn" onclick="btf.scrollToDest(0,500), heo.hideConsole()"><i class="fas fa-arrows-up-to-line fa-beat" style="font-size: 1rem;"></i></a></div></div><div class="console-mask"></div></div><main class="layout" id="content-inner"><div id="post"><div class="dimension-toc"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">汇编命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#R%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">R命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#H%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">H命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">D命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">E命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">M命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">C命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.7.</span> <span class="toc-text">S命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.</span> <span class="toc-text">A命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.9.</span> <span class="toc-text">G命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#U%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.10.</span> <span class="toc-text">U命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#N%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.11.</span> <span class="toc-text">N命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#W%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.12.</span> <span class="toc-text">W命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#L%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.13.</span> <span class="toc-text">L命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#T%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.14.</span> <span class="toc-text">T命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.15.</span> <span class="toc-text">P命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.16.</span> <span class="toc-text">I命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#O%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.17.</span> <span class="toc-text">O命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.18.</span> <span class="toc-text">Q命令的使用</span></a></li></ol></li></ol></div></div></div><article class="post-content" id="article-container"><p>1、指令<br>机器指令：CPU能直接识别并执行的二进制编码</p>
+<p>汇编指令：汇编指令是机器指令的助记符，同机器指令一一对应。</p>
+<p>指令：指令通常由操作码和地址码（操作数）两部分组成</p>
+<p>指令集：每种CPU都有自己的汇编指令集。</p>
+<p>汇编语言由3类指令组成。</p>
+<p>汇编指令<br>伪指令：没有对应的机器码，由编译器执行，计算机并不执行<br>其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39654127/article/details/88698911">https://blog.csdn.net/qq_39654127/article/details/88698911</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">; R 查看、修改CPU中寄存器的内容</span><br><span class="line">; D 查看内存中的内容</span><br><span class="line">; E 修改内存中的内容（可以写入数据、指令）</span><br><span class="line">; U 将内存中的内容解释为机器指令和对应的汇编指令</span><br><span class="line">; T 执行CS:IP指向的内存单元处的指令</span><br><span class="line">; A 以汇编指令的形式向内存中写入指令</span><br></pre></td></tr></table></figure>
+<h1 id="汇编命令"><a href="#汇编命令" class="headerlink" title="汇编命令"></a>汇编命令</h1><p>汇编语言Debug命令详解<br>DEBUG的常用命令：A,U,R,T,D,E,Q 等等</p>
+<p>汇编语言DEBUG命令详解<br>文章目录<br>汇编语言DEBUG命令详解<br><strong>R命令的使用</strong><br><strong>H命令的使用</strong><br><strong>D命令的使用</strong><br><strong>E命令的使用</strong><br><strong>F命令的使用</strong><br><strong>M命令的使用</strong><br><strong>C命令的使用</strong><br><strong>S命令的使用</strong><br><strong>A命令的使用</strong><br><strong>G命令的使用</strong><br><strong>U命令的使用</strong><br><strong>N命令的使用</strong><br><strong>W命令的使用</strong><br><strong>L命令的使用</strong><br><strong>T命令的使用</strong><br><strong>P命令的使用</strong><br><strong>I命令的使用</strong><br><strong>O命令的使用</strong><br><strong>Q命令的使用</strong></p>
+<h2 id="R命令的使用"><a href="#R命令的使用" class="headerlink" title="R命令的使用"></a><strong>R命令的使用</strong></h2><p>作用：观看和修改寄存器的值。<br>在提示符“-”下输入以下命令：R。DEBUG将会显示出当前所有寄存器和标志位的状态。<br>接下来再输入命令rax。在提示符“：”后输入100。该命令的作用是将寄存器ax的值设置为100（注意：DEBUG使用的是十六进制，这里的100相当于十进制的256。）<br>最后再执行r命令，观看修改后的寄存器值。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/p1.jpg" alt="在这里插入图片描述"></p>
+<h2 id="H命令的使用"><a href="#H命令的使用" class="headerlink" title="H命令的使用"></a>H命令的使用</h2><p>H命令作用：计算两个十六进制数的和与差。<br>在提示符“–”下输入以下命令：h 10 1。观看命令执行结果。</p>
+<p>运行结果的前一个数是计算出来的和，后一个数是计算出来的差。计算结果均用十六进制形式表示。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/p2.jpg" alt="在这里插入图片描述"></p>
+<h2 id="D命令的使用"><a href="#D命令的使用" class="headerlink" title="D命令的使用"></a>D命令的使用</h2><p>D命令作用：</p>
+<p>。<br>在提示符“–”下连续执行命令R、D、D。观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgwOTU0NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>前面已经介绍过了，命令R的作用是显示当前寄存器的值。而命令D的作用是显示内存区域的内容，最左边是内存的起始地址，中间以十六进制的形式显示内存值，最右边是以ASCII码的形式显示内存值。每行最多显示16个字节的内容。<br>命令D可以带参数也可省略参数。设DEBUG启动时DS的值为X，当省略参数时，命令D显示内容以X：100为起始，每次显示128个字节的内容。以后再执行不带参数的命令D时，DEBUG将按上次的位置接着显示下去。<br>带参数时DEBUG能够显示指定地址范围的内容。带参数的方式有三种：<br>方式一：<strong>d [起始位置]</strong>。DEBUG从起始位置开始显示128个字节的内容。在提示符“-”下执行命令d 1000:100。观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220234232622.png" alt="在这里插入图片描述"></p>
+<p>方式二：<strong>d [起始位置] [结束位置]</strong>。DEBUG从起始位置开始一直显示到结束位置。在提示符“-”下执行命令d 1000:100 200。观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/p3.jpg" alt="在这里插入图片描述"></p>
+<p>方式三：<strong>d [起始位置] [L长度]</strong>，长度以L参数为标识。DEBUG从起始位置开始显示指定长度的内容。在提示符“-”下执行命令d ds:100 L10。观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/2019122023430230.png" alt="在这里插入图片描述"></p>
+<h2 id="E命令的使用"><a href="#E命令的使用" class="headerlink" title="E命令的使用"></a>E命令的使用</h2><p>E命令作用：改变内存单位的内容。<br>E命令的使用方式为：<strong>E [起始位置]。</strong><br>在提示符“-”下输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e 1000:100</span><br></pre></td></tr></table></figure>
+<p>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/2019122023434473.png" alt="在这里插入图片描述"></p>
+<p>DEBUG首先显示[1000:100]的内容01.，这时可以修改该字节的值。如果还要修改后续的内容，可以按空格键继续。当要跳过某个字节时，可以按连续的两个空格跳到后一个字节去。</p>
+<p>F命令的使用<br>F命令作用：使用指定的值填充指定内存区域中的地址。<br>F命令的使用方式为：<strong>F [范围] [填充列表]。</strong><br>在提示符“-”下输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F 1AF5:100 L20 1 2 3 4 5</span><br></pre></td></tr></table></figure>
+<p>。执行命令D 1AF5:100观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220234504233.png" alt="在这里插入图片描述"></p>
+<p>说明：该命令是用字节序列01、02、03、04、05轮流填充从1AF5:100开始长度为20H的内存区域。<br>在提示符“-”下输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F 1AF5:100 13F 41 42 43 44</span><br></pre></td></tr></table></figure>
+<p>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220234514671.png" alt="在这里插入图片描述"></p>
+<p>说明：该命令是用字节序列41、42、43、44轮流填充从1AF5:100开始一直到1AF5:13F的内存区域。</p>
+<h2 id="M命令的使用"><a href="#M命令的使用" class="headerlink" title="M命令的使用"></a>M命令的使用</h2><p>M命令作用：将指定内存区域的数据复制到指定的地址去。<br>M命令的使用方式为：<strong>M [范围] [指定地址]。</strong><br>在提示符“-”下输入以下命令：M 1AF5:100 13F 1AF5:140。执行命令D 1AF5:100观看命令执行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220234732681.png" alt="在这里插入图片描述"></p>
+<h2 id="C命令的使用"><a href="#C命令的使用" class="headerlink" title="C命令的使用"></a>C命令的使用</h2><p>C命令作用：将两块内存的内容进行比较。<br>C命令的使用方式为：<strong>C [范围] [指定地址]</strong>，意思就是将指定范围的内存区域与从指定地址开始的相同长度的内存区域逐个字节进行比较，列出不同的内容。<br>在提示符“-”下输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C 1AF5:100 13F 1AF5:140</span><br></pre></td></tr></table></figure>
+<p>。由于两块内容完全相同，所以命令执行后没有任何显示。<br>在提示符“-”下输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C 1AF5:100 107 1AF5:180</span><br></pre></td></tr></table></figure>
+<p>，比较的区域长度为8个字节。命令执行后列出比较结果不同的各个字节。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/2019122023481636.png" alt="在这里插入图片描述"></p>
+<h2 id="S命令的使用"><a href="#S命令的使用" class="headerlink" title="S命令的使用"></a>S命令的使用</h2><p>S命令作用：在指定的内存区域中搜索指定的串。<br>S命令的使用方式为：S [范围] [指定串]。<br>在提示符“-”下输入以下命令：D 1AF5:100 11F。显示该区域的内存值。<br>在提示符“-”下输入以下命令：S 1AF5:100 11F 41 42 43 44。搜索该区域是否存在字节串41 42 43 44，并将搜索结果一一列出。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/2019122023485450.png" alt="在这里插入图片描述"></p>
+<p>从执行结果可以看出，总共搜索到八处。</p>
+<h2 id="A命令的使用"><a href="#A命令的使用" class="headerlink" title="A命令的使用"></a>A命令的使用</h2><p><strong>A命令作用：输入汇编指令。</strong><br>以下的程序要在屏幕上显示“ABCD”四个字符。<br>首先用E命令将“ABCD” 四 个 字 符 预 先 放 在 内 存 C S : 200 处 ， 然 后 执 行 A 100 命 令 输 入 汇 编 程 序 代 码 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MOV    AX , CS    </span><br><span class="line"></span><br><span class="line">MOV    DS , A X   </span><br><span class="line"></span><br><span class="line">MOV    DX , 200   </span><br><span class="line"></span><br><span class="line">MOV    AH , 9          </span><br><span class="line"></span><br><span class="line">INT   21    </span><br><span class="line"></span><br><span class="line">INT    20 </span><br></pre></td></tr></table></figure>
+<p>（说明：前两行汇编指令用于将段寄存器CS的值赋给段寄存器DS。第三到第五行汇编代码的作用是显示以“”四个字符预先放在内存CS:200处，然后执行A100命令输入汇编程序代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,CS</span><br><span class="line"></span><br><span class="line">MOV DS,AX  </span><br><span class="line"></span><br><span class="line">MOV DX,200</span><br><span class="line"></span><br><span class="line">MOV AH,9  </span><br><span class="line"></span><br><span class="line">INT  21  </span><br><span class="line"></span><br><span class="line">INT  20</span><br></pre></td></tr></table></figure>
+<p>（说明：前两行汇编指令用于将段寄存器CS的值赋给段寄存器DS。第三到第五行汇编代码的作用是显示以“”为结尾的字符串。最后一行用于结束程序。）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220234946903.png" alt="在这里插入图片描述"></p>
+<h2 id="G命令的使用"><a href="#G命令的使用" class="headerlink" title="G命令的使用"></a>G命令的使用</h2><p>G命令作用：执行汇编指令。<br>G命令的使用方法是：<strong>G [=起始地址] [断点地址]</strong>，意思是从起始地址开始执行到断点地址。如果不设置断点，则程序一直运行到中止指令才停止。<br>在设置完示例九的的内存数据并且输入完示例九的程序后运行这些汇编代码。在DEBUG中执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G&#x3D;100</span><br></pre></td></tr></table></figure>
+<p>，观看运行结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220235034166.png" alt="在这里插入图片描述"></p>
+<p>汇编程序运行后在屏幕上显示出“ABCD”四个字符。</p>
+<p>接下来在DEBUG中执行G=100 10B，意思是从地址CS：100开始，一直运行到CS：10B停止。观看运行结果。<br>命令执行后，不但显示出字符串“ABCD”，而且列出当前寄存器和标志位的值。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/pic.jpg" alt="在这里插入图片描述"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/pic2.jpg" alt="在这里插入图片描述"></p>
+<p><strong>g命令在loop中的使用：</strong><br>使用loop循环时，如果要跳出循环执行后面的代码，可以先用u命令查看代码的偏移地址，再用g命令跳转到此偏移到此代码处，如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/pic3_jpg" alt="在这里插入图片描述"></p>
+<p>用u命令可以看到循环的命令位于0b40:000b，所以要跳出循环就用 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g 000b </span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h2 id="U命令的使用"><a href="#U命令的使用" class="headerlink" title="U命令的使用"></a>U命令的使用</h2><p><strong>U命令作用：对机器代码反汇编显示。</strong><br>U命令的使用方法是：<strong>U [范围]</strong>。如果范围参数只输入了起始地址，则只对20H个字节的机器代码反汇编。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/pic3" alt="在这里插入图片描述"></p>
+<p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U100</span><br></pre></td></tr></table></figure>
+<p>，观看反汇编结果。</p>
+<p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U 100 10B</span><br></pre></td></tr></table></figure>
+<p>，观看反汇编结果。该命令的作用是对从100到10B的机器代码进行反汇编。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/s" alt="在这里插入图片描述"></p>
+<h2 id="N命令的使用"><a href="#N命令的使用" class="headerlink" title="N命令的使用"></a>N命令的使用</h2><p><strong>N命令作用：设置文件名，为将刚才编写的汇编程序存盘做准备。</strong><br>以下的DEBUG命令序列作用将刚才的汇编程序存为磁盘的COM可执行程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D200 20F</span><br><span class="line">U100 10C</span><br><span class="line">N E:\FIRST.COM</span><br><span class="line">RCX</span><br><span class="line">:110</span><br><span class="line">W</span><br></pre></td></tr></table></figure>
+<p>第一和第二条命令的作用是检查一下刚才编写的汇编指令</p>
+<p>。第三条命令的作用是设置存盘文件名为E:\FIRST.COM，</p>
+<p>第四条命令的作用是设置存盘文件大小为110H个字节。</p>
+<p>最后一条命令是将文件存盘。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220235446177.png" alt="在这里插入图片描述"></p>
+<p>文件存盘后执行E:\FIRST.COM，观看存盘的可执行文件的运行效果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220235513413.png" alt="在这里插入图片描述"></p>
+<h2 id="W命令的使用"><a href="#W命令的使用" class="headerlink" title="W命令的使用"></a>W命令的使用</h2><p><strong>W命令作用：将文件或者特定扇区写入磁盘。</strong><br>在示例“N命令的使用”中已经实验了如何使用W命令将文件存盘。<br>在没有很好地掌握汇编语言和磁盘文件系统前，暂时不要使用W命令写磁盘扇区，否则很容易损坏磁盘文件，甚至破坏整个磁盘的文件系统。</p>
+<h2 id="L命令的使用"><a href="#L命令的使用" class="headerlink" title="L命令的使用"></a>L命令的使用</h2><p><strong>L命令作用：从磁盘中将文件或扇区内容读入内存。</strong><br>将文件调入内存必须先用DEBUG的N命令设定文件名。以下例子是将E:\FIRST.COM读入内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">N FIRST.COM</span><br><span class="line">L</span><br></pre></td></tr></table></figure>
+<p>观看调入程序的汇编代码可以使用DEBUG的U命令，用U100观看调入的COM文件。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220235725326.png" alt="**Flowchart流程图** 语法，参考 [这儿][4]."></p>
+<p>读取磁盘扇区的方式是：<strong>L [内存地址] [磁盘驱动器号] [起始扇区] [扇区数]。</strong></p>
+<p>“内存地址”指定要在其中加载文件或扇区内容的内存位置，如果不指定“内存地址”的话，DEBUG将使用CS寄存器中的当前地址。</p>
+<p>“磁盘驱动器号”指定包含读取指定扇区的磁盘的驱动器，该值是数值型：0=A，1=B，2=C等。</p>
+<p>“起始扇区”指定要加载其内容的第一个扇区的十六进制数。“扇区数”指定要加载其内容的连续扇区的十六进制数。<br>只有要加载特定扇区的内容而不是加载文件时，才能使用[磁盘驱动器号] [起始扇区] [扇区数]参数。<br>例如：要将C盘第一扇区读取到内存DS:300的位置，相应的DEBUG命令为L DS:300 2 1 1。但是由于Windows操作系统对文件系统的保护，这条命令可能会被操作系统禁止运行。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/20191220235801778.png" alt="在这里插入图片描述"></p>
+<h2 id="T命令的使用"><a href="#T命令的使用" class="headerlink" title="T命令的使用"></a>T命令的使用</h2><p><strong>T命令作用：执行汇编程序，单步跟踪。</strong><br>T命令的使用方式是T [=地址] [指令数]。如果忽略“地址”的话，T命令从CS:IP处开始运行。“指令数”是要单步执行的指令的数量。<br>以下示例对E:\FIRST.COM进行单步跟踪。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">N E:\FIRST.COM</span><br><span class="line">L</span><br><span class="line">U100 10B</span><br><span class="line">R</span><br><span class="line">T&#x3D;100</span><br><span class="line">T</span><br></pre></td></tr></table></figure>
+<p>第一、二条命令是装入文件，第三条命令是列出程序反汇编代码，第四条命令是显示当前寄存器值，第五条命令是从CS:100处开始单步跟踪，第六条命令是继续跟踪后续的指令。</p>
+<h2 id="P命令的使用"><a href="#P命令的使用" class="headerlink" title="P命令的使用"></a>P命令的使用</h2><p><strong>P命令作用：执行汇编程序，单步跟踪。与T命令不同的是：P命令不会跟踪进入子程序或软中断。</strong><br>P命令的使用方式与T命令的使用方式完全相同。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/pic6" alt="img"></p>
+<p>p命令还可以用于结束本次循环，进入下一次循环。</p>
+<h2 id="I命令的使用"><a href="#I命令的使用" class="headerlink" title="I命令的使用"></a>I命令的使用</h2><p><strong>I命令作用：从计算机输入端口读取数据并显示。</strong><br>I命令的用法是I [端口地址]。例如从3F8号端口读取数据并显示的命令为：I 3F8。这里不对该命令做解释。</p>
+<h2 id="O命令的使用"><a href="#O命令的使用" class="headerlink" title="O命令的使用"></a>O命令的使用</h2><p><strong>O命令作用：向计算机输出端口送出数据。</strong><br>O命令的用法是O [端口地址] [字节值]。例如向278号端口发出数据20H的命令为：I 278 20。这里不对该命令做解释。</p>
+<h2 id="Q命令的使用"><a href="#Q命令的使用" class="headerlink" title="Q命令的使用"></a>Q命令的使用</h2><p><strong>Q命令的作用是退出DEBUG，回到DOS状态。</strong></p>
+<p>来源：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/tiger2soft/p/5094917.html">https://www.cnblogs.com/tiger2soft/p/5094917.html</a><br>————————————————<br>版权声明：本文为CSDN博主「weixin_43809545」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43809545/article/details/103640185">https://blog.csdn.net/weixin_43809545/article/details/103640185</a></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>汇编语言</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://wangmou-niubi.github.io/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">https://wangmou-niubi.github.io/2021/09/28/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a" style="display: inline-block;width: 120px"><h>作者</h><div class="post-copyright-cc-info"><h>王馨</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>发布于</h><div class="post-copyright-cc-info"><h>2021-09-28</h></div></div><div class="post-copyright-u" style="display: inline-block;width: 120px"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-01-16</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="/cc/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY 4.0" href="/cc/">CC BY 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/6403a054f144a0100779cd83.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://ezgx.site/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ezgx.site/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/10/28/%E4%B8%AD%E5%9B%BD%E8%8F%9C%E5%88%80/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64039f55f144a0100779117b.png" onerror="onerror=null;src='https://ezgx.site/img/404.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">中国菜刀</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/06/Vue3/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64039fd0f144a01007796d4a.jpg" onerror="onerror=null;src='https://ezgx.site/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Vue3</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://home.ezgx.site/" title="个人主页"><i class="fa-solid fa-compass"></i></a><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://res.abeim.cn/api/qq/?qq=3387251845" title="联系QQ"><i class="fa-brands fa-qq"></i></a><a class="deal_link" href="/authorwechat/" title="联系微信"><i class="fa-brands fa-weixin"></i></a><img class="footer_mini_logo entered loading" style="border-radius:50%" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://github.com/ezgx" title="Github"><i class="fa-brands fa-github"></i></a><a class="deal_link" href="/comments/" title="留言"><i class="fa-solid fa-comment"></i></a><a class="deal_link" target="_blank" rel="noopener external nofollow" href="mailto:3387251845@qq.com" title="发送邮件"><i class="fa-solid fa-envelope"></i></a></div><div id="Jay-footer"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://home.ezgx.site">个人主页</a><a class="footer-item" href="/about/">关于</a><a class="footer-item" href="/link/">友链</a><a class="footer-item" href="javascript:toRandomPost()">随机文章</a></div></div><div class="footer-group"><h3 class="footer-title">标签</h3><div class="footer-links"><a class="footer-item" href="/tags/%E6%95%99%E7%A8%8B/">📚教程</a><a class="footer-item" href="/categories/butterfly/">🦋魔改教程</a><a class="footer-item" href="/categories/%E5%89%8D%E7%AB%AF/">🌈捣鼓前端</a><a class="footer-item" href="/categories/%E7%94%9F%E6%B4%BB/">📙生活记录</a></div></div><div class="footer-group"><h3 class="footer-title">我的</h3><div class="footer-links"><a class="footer-item" href="/about/">关于</a><a class="footer-item" href="/archives/">归档</a><a class="footer-item" href="/tags/">标签</a><a class="footer-item" href="/categories/">分类</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cc/">版权协议</a><a class="footer-item" target="_blank" rel="noopener" href="https://github.com/Ezgx/hexo-theme-dimension/blob/main/LICENSE">主题协议</a><a class="footer-item" href="javascript:void(0)">占位</a><a class="footer-item" href="javascript:void(0)">占位</a></div></div></div><div id="footer-banner"><div class="footer-banner-links"><div class="footer-banner-left"><div class="footer-banner-left"><div id="footer-banner-tips">2023 ©Echocbx</div></div></div><div class="footer-banner-right"><a class="footer-banner-link" target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo">框架：Hexo</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/2023/dimension" title="theme">主题：dimension</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/about/" title="about">关于</a><a class="footer-banner-link">|</a><a class="footer-banner-link cc" href="/cc/" title="cc协议"><i class="fab fa-creative-commons"></i><span>协议。</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.bilicdn.tk/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.bilicdn.tk/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: 'ap-shanghai',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.bilicdn.tk/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.bilicdn.tk/npm/@waline/client/dist/waline.min.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: '',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.bilicdn.tk/npm/@waline/client/dist/waline.min.js').then(initWaline)
+  }
+}
+
+if ('Twikoo' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="欢迎来到,Echocbx的,博客" data-fontsize="16px" data-random="false" async="async"></script><script src="https://cdn.bilicdn.tk/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="hometop.js"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><span id="fps"></span></body></html>

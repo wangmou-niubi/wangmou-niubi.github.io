@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-cn"><head><link rel="stylesheet" type="text/css" href="/css/nerd.css"><link rel="stylesheet" type="text/css" href="/css/loadingcar.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-marcus/lib/skills.min.css"><link rel="preload" as="style" type="text/css" href="/css/nerd.css"><link rel="preload" as="font" type="font/ttf" href="/fonts/font.woff2" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><script async="" data-pjax="" src="/js/custom.js"></script><script src="/js/random.js"></script><script async="" src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script><script async="" src="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/lib/index.js"></script><script async="" data-pjax="" src="/js/linksbar.js"></script><script async="" src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/carousel-touch.min.js"></script><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>diff算法 | 犯罪嫌疑人王某</title><meta name="author" content="王馨"><meta name="copyright" content="王馨"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="1. 前言diff 算法是一种通过同层的树节点进行比较的高效算法，避免了对树进行逐层搜索遍历，所以时间复杂度只有 O(n)。diff 算法的在很多场景下都有应用，例如在 vue 虚拟 dom 渲染成真实 dom 的新旧 VNode 节点比较更新时，就用到了该算法。diff 算法有两个比较显著的特点：  比较只会在同层级进行, 不会跨层级比较。    在 diff 比较的过程中，循环从两边向中间收拢">
+<meta property="og:type" content="article">
+<meta property="og:title" content="diff算法">
+<meta property="og:url" content="https://wangmou-niubi.github.io/2021/12/01/diff%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="犯罪嫌疑人王某">
+<meta property="og:description" content="1. 前言diff 算法是一种通过同层的树节点进行比较的高效算法，避免了对树进行逐层搜索遍历，所以时间复杂度只有 O(n)。diff 算法的在很多场景下都有应用，例如在 vue 虚拟 dom 渲染成真实 dom 的新旧 VNode 节点比较更新时，就用到了该算法。diff 算法有两个比较显著的特点：  比较只会在同层级进行, 不会跨层级比较。    在 diff 比较的过程中，循环从两边向中间收拢">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64039fd0f144a01007796d4a.jpg">
+<meta property="article:published_time" content="2021-12-01T11:56:45.000Z">
+<meta property="article:modified_time" content="2022-01-16T11:27:52.000Z">
+<meta property="article:author" content="王馨">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/64039fd0f144a01007796d4a.jpg"><link rel="shortcut icon" href="https://ezgx.site/img/avatar.png"><link rel="canonical" href="https://wangmou-niubi.github.io/2021/12/01/diff%E7%AE%97%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.bilicdn.tk/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.bilicdn.tk/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'diff算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-16 19:27:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+setTimeout(function(){preloader.endLoading();}, 3600);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><link rel="stylesheet" href="/css/loading.css"/><script src="https://cdn.bilicdn.tk/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/"><i class="fa-fw fas fa-house-user"></i><span> 首页</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 链环</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/sites/"><i class="fa-fw fas fa-star"></i><span> 站长推荐</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 找我</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言</span></a></li><li><a class="site-page child" href="/authorqq/"><i class="fa-fw fab fa-qq"></i><span> 博主QQ</span></a></li><li><a class="site-page child" href="/authorwechat/"><i class="fa-fw fab fa-weixin"></i><span> 博主微信</span></a></li><li><a class="site-page child" href="/qqgroup/"><i class="fa-fw fas fa-user-group"></i><span> QQ群</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/ezgx"><i class="fa-fw fab fa-github"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cc/"><i class="fa-fw fab fa-creative-commons"></i><span> 协议</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://dimension.ezgx.site/"><i class="fa-fw fas fa-wand-magic-sparkles"></i><span> 主题</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://home.ezgx.site"><i class="fa-fw fas fa-house-user"></i><span> 主页</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/64039fd0f144a01007796d4a.jpg')"><nav id="nav"><div id="toggle-menu"><a class="site-page"><i class="fas fa-grip-vertical"></i></a></div><span id="blog_name"><a id="site-name" href="/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.tianli0.top/%E9%A6%96%E9%A1%B5.png" width="50" height="50"/><div class="title">犯罪嫌疑人王某</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" onclick="btf.scrollToDest(0,500)"></a></center><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div></div><div id="menus"><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="nav-button console-button"><a class="link" onclick="heo.showConsole()"><i class="fas fa-circle-plus fa-xl fa-beat"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/"><i class="fa-fw fas fa-house-user"></i><span> 首页</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 链环</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/sites/"><i class="fa-fw fas fa-star"></i><span> 站长推荐</span></a></li><li><a class="site-page child" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 找我</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言</span></a></li><li><a class="site-page child" href="/authorqq/"><i class="fa-fw fab fa-qq"></i><span> 博主QQ</span></a></li><li><a class="site-page child" href="/authorwechat/"><i class="fa-fw fab fa-weixin"></i><span> 博主微信</span></a></li><li><a class="site-page child" href="/qqgroup/"><i class="fa-fw fas fa-user-group"></i><span> QQ群</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/ezgx"><i class="fa-fw fab fa-github"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cc/"><i class="fa-fw fab fa-creative-commons"></i><span> 协议</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://dimension.ezgx.site/"><i class="fa-fw fas fa-wand-magic-sparkles"></i><span> 主题</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://home.ezgx.site"><i class="fa-fw fas fa-house-user"></i><span> 主页</span></a></li></ul></div></div></div></nav><div id="post-info"><div class="post-meta__tag-list"></div><h1 class="post-title">diff算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-01T11:56:45.000Z" title="Created 2021-12-01 19:56:45">2021-12-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-16T11:27:52.000Z" title="Updated 2022-01-16 19:27:52">2022-01-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span></div></div></div></header><div id="console"><div class="close-btn" onclick="heo.hideConsole()"><i class="fas fa-circle-xmark"></i></div><div class="console-webinfo"><div class="console-webinfo-card"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line fa-bounce"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name"><i class="fas fa-folder-open fa-beat"></i><div class="text">文章总数</div></div><div class="item-count">54</div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-clock fa-shake"></i><div class="text">建站天数</div></div><div class="item-count" id="runtimeshow" data-publishDate="2022-08-12T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-pen-to-square fa-beat"></i><div class="text">全站字数</div></div><div class="item-count">47.7k</div></div><div class="webinfo-item"><div class="item-name"><i class="fas fa-upload fa-shake"></i><div class="text">最后更新</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-06-07T03:20:54.471Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="toRandomPost()" title="随机文章"><i class="fas fa-shuffle fa-beat" style="font-size: 1rem;"></i></a></div><div class="console-btn-item"><a class="assist-btn" target="_blank" rel="noopener" href="https://travellings.cn/go.html" title="友链接力"><i class="fas fa-bus fa-beat" style="font-size: 1rem;"></i></a></div><div class="console-btn-item"><a class="assist-btn" onclick="btf.scrollToDest(0,500), heo.hideConsole()"><i class="fas fa-arrows-up-to-line fa-beat" style="font-size: 1rem;"></i></a></div></div><div class="console-mask"></div></div><main class="layout" id="content-inner"><div id="post"><div class="dimension-toc"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-diff-%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">2. diff 流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-number">2.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-number">2.2.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-number">2.3.</span> <span class="toc-text">第三步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%93%E5%B0%BE"><span class="toc-number">3.</span> <span class="toc-text">3. 结尾</span></a></li></ol></div></div></div><article class="post-content" id="article-container"><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>diff 算法是一种通过同层的树节点进行比较的高效算法，避免了对树进行逐层搜索遍历，所以时间复杂度只有 O(n)。diff 算法的在很多场景下都有应用，例如在 vue 虚拟 dom 渲染成真实 dom 的新旧 VNode 节点比较更新时，就用到了该算法。diff 算法有两个比较显著的特点：</p>
+<ul>
+<li>比较只会在同层级进行, 不会跨层级比较。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/91e9c9519a11caa0c5bf70714383f054.png" alt="img"></p>
+<ul>
+<li>在 diff 比较的过程中，循环从两边向中间收拢。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/2dcd6ad5cf82c65b9cfc43a27ba1e4ec.png" alt="img"></p>
+<h2 id="2-diff-流程"><a href="#2-diff-流程" class="headerlink" title="2. diff 流程"></a>2. diff 流程</h2><p>本着对 diff 过程的认识和 vue 源码的学习，我们通过 vue 源码的解读和实例分析来理清楚 diff 算法的整个流程，下面把整个 diff 流程拆成三步来具体分析：</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>vue 的虚拟 dom 渲染真实 dom 的过程中首先会对新老 VNode 的开始和结束位置进行标记：oldStartIdx、oldEndIdx、newStartIdx、newEndIdx。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let oldStartIdx &#x3D; 0 &#x2F;&#x2F; 旧节点开始下标let newStartIdx &#x3D; 0 &#x2F;&#x2F; 新节点开始下标let oldEndIdx &#x3D; oldCh.length - 1 &#x2F;&#x2F; 旧节点结束下标let oldStartVnode &#x3D; oldCh[0]  &#x2F;&#x2F; 旧节点开始vnodelet oldEndVnode &#x3D; oldCh[oldEndIdx] &#x2F;&#x2F; 旧节点结束vnodelet newEndIdx &#x3D; newCh.length - 1 &#x2F;&#x2F; 新节点结束下标let newStartVnode &#x3D; newCh[0] &#x2F;&#x2F; 新节点开始vnodelet newEndVnode &#x3D; newCh[newEndIdx] &#x2F;&#x2F; 新节点结束vnode</span><br></pre></td></tr></table></figure>
+<p>经过第一步之后，我们初始的新旧 VNode 节点如下图所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/80dc339f73b186479e6d1fc18bfbf66d.png" alt="img"></p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>标记好节点位置之后，就开始进入到的 while 循环处理中，这里是 diff 算法的核心流程，分情况进行了新老节点的比较并移动对应的 VNode 节点。while 循环的退出条件是直到老节点或者新节点的开始位置大于结束位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (oldStartIdx &lt;= oldEndIdx &amp;&amp; newStartIdx &lt;= newEndIdx) &#123;    ....<span class="comment">//处理逻辑&#125;</span></span><br></pre></td></tr></table></figure>
+<p>接下来具体介绍 while 循环中的处理逻辑， 循环过程中首先对新老 VNode 节点的头尾进行比较，寻找相同节点，如果有相同节点满足 sameVnode（可以复用的相同节点） 则直接进行 patchVnode (该方法进行节点复用处理)，并且根据具体情形，移动新老节点的 VNode 索引，以便进入下一次循环处理，一共有 2 * 2 = 4 种情形。下面根据代码展开分析:</p>
+<p><strong>情形一</strong>：当新老 VNode 节点的 start 满足 sameVnode 时，直接 patchVnode 即可，同时新老 VNode 节点的开始索引都加 1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sameVnode(oldStartVnode, newStartVnode)) &#123;     </span><br><span class="line">    patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx)  </span><br><span class="line">    oldStartVnode = oldCh[++oldStartIdx]    </span><br><span class="line">    newStartVnode = newCh[++newStartIdx]    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>情形二</strong>：当新老 VNode 节点的 end 满足 sameVnode 时，同样直接 patchVnode 即可，同时新老 VNode 节点的结束索引都减 1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (sameVnode(oldEndVnode, newEndVnode)) &#123;       </span><br><span class="line">patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx)    </span><br><span class="line">oldEndVnode = oldCh[--oldEndIdx]      </span><br><span class="line">newEndVnode = newCh[--newEndIdx]    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>情形三</strong>：当老 VNode 节点的 start 和新 VNode 节点的 end 满足 sameVnode 时，这说明这次数据更新后 oldStartVnode 已经跑到了 oldEndVnode 后面去了。这时候在 patchVnode 后，还需要将当前真实 dom 节点移动到 oldEndVnode 的后面，同时老 VNode 节点开始索引加 1，新 VNode 节点的结束索引减 1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (sameVnode(oldStartVnode, newEndVnode)) &#123;</span><br><span class="line"><span class="comment">// Vnode moved right       </span></span><br><span class="line">patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx) </span><br><span class="line">canMove &amp;&amp; nodeOps.insertBefore(parentElm, oldStartVnode.elm, nodeOps.nextSibling(oldEndVnode.elm))        oldStartVnode = oldCh[++oldStartIdx]        </span><br><span class="line">newEndVnode = newCh[--newEndIdx]      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>情形四</strong>：当老 VNode 节点的 end 和新 VNode 节点的 start 满足 sameVnode 时，这说明这次数据更新后 oldEndVnode 跑到了 oldStartVnode 的前面去了。这时候在 patchVnode 后，还需要将当前真实 dom 节点移动到 oldStartVnode 的前面，同时老 VNode 节点结束索引减 1，新 VNode 节点的开始索引加 1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx)      </span><br><span class="line">canMove &amp;&amp; nodeOps.insertBefore(parentElm, oldEndVnode.elm, oldStartVnode.elm)        </span><br><span class="line">oldEndVnode = oldCh[--oldEndIdx]     </span><br><span class="line">newStartVnode = newCh[++newStartIdx]     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果都不满足以上四种情形，那说明没有相同的节点可以复用</strong>。于是则通过查找事先建立好的以旧的 VNode 为 key 值，对应 index 序列为 value 值的哈希表。从这个哈希表中找到与 newStartVnode 一致 key 的旧的 VNode 节点，如果两者满足 sameVnode 的条件，在进行 patchVnode 的同时会将这个真实 dom 移动到 oldStartVnode 对应的真实 dom 的前面；如果没有找到，则说明当前索引下的新的 VNode 节点在旧的 VNode 队列中不存在，无法进行节点的复用，那么就只能调用 createElm 创建一个新的 dom 节点放到当前 newStartIdx 的位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> &#123;<span class="comment">// 没有找到相同的可以复用的节点，则新建节点处理</span></span><br><span class="line">        <span class="comment">/* 生成一个key与旧VNode的key对应的哈希表（只有第一次进来undefined的时候会生成，也为后面检测重复的key值做铺垫） 比如childre是这样的 [&#123;xx: xx, key: &#x27;key0&#x27;&#125;, &#123;xx: xx, key: &#x27;key1&#x27;&#125;, &#123;xx: xx, key: &#x27;key2&#x27;&#125;] beginIdx = 0 endIdx = 2 结果生成&#123;key0: 0, key1: 1, key2: 2&#125; */</span></span><br><span class="line">        <span class="keyword">if</span> (isUndef(oldKeyToIdx)) oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx)</span><br><span class="line">        <span class="comment">/*如果newStartVnode新的VNode节点存在key并且这个key在oldVnode中能找到则返回这个节点的idxInOld（即第几个节点，下标）*/</span></span><br><span class="line">        idxInOld = isDef(newStartVnode.key)</span><br><span class="line">          ? oldKeyToIdx[newStartVnode.key]</span><br><span class="line">          : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx)</span><br><span class="line">        <span class="keyword">if</span> (isUndef(idxInOld)) &#123; <span class="comment">// New element</span></span><br><span class="line">          <span class="comment">/*newStartVnode没有key或者是该key没有在老节点中找到则创建一个新的节点*/</span></span><br><span class="line">          createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, <span class="literal">false</span>, newCh, newStartIdx)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">/*获取同key的老节点*/</span></span><br><span class="line">          vnodeToMove = oldCh[idxInOld]</span><br><span class="line">          <span class="keyword">if</span> (sameVnode(vnodeToMove, newStartVnode)) &#123;</span><br><span class="line">            <span class="comment">/*如果新VNode与得到的有相同key的节点是同一个VNode则进行patchVnode*/</span></span><br><span class="line">            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx)</span><br><span class="line">            <span class="comment">//因为已经patchVnode进去了，所以将这个老节点赋值undefined</span></span><br><span class="line">            oldCh[idxInOld] = <span class="literal">undefined</span></span><br><span class="line">            <span class="comment">/*当有标识位canMove实可以直接插入oldStartVnode对应的真实Dom节点前面*/</span></span><br><span class="line">            canMove &amp;&amp; nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm)</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// same key but different element. treat as new element</span></span><br><span class="line">            <span class="comment">/*当新的VNode与找到的同样key的VNode不是sameVNode的时候（比如说tag不一样或者是有不一样type的input标签），创建一个新的节点*/</span></span><br><span class="line">            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, <span class="literal">false</span>, newCh, newStartIdx)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        newStartVnode = newCh[++newStartIdx]</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>再来看我们的实例，第一次循环后，找到了旧节点的末尾和新节点的开头(都是 D)相同，于是直接复用 D 节点作为 diff 后创建的第一个真实节点。同时旧节点的 endIndex 移动到了 C，新节点的 startIndex 移动到了 C。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/76032c78c8ef74047efd42c070e48854.png" alt="img"></p>
+<p>紧接着开始第二次循环，第二次循环后，同样是旧节点的末尾和新节点的开头(都是 C)相同，同理，diff 后创建了 C 的真实节点插入到第一次创建的 B 节点后面。同时旧节点的 endIndex 移动到了 B，新节点的 startIndex 移动到了 E。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/1c76e7489660188d35f0a38ea8c8ecd7.png" alt="img"></p>
+<p>接下来第三次循环中，发现 patchVnode 的 4 种情形都不符合，于是在旧节点队列中查找当前的新节点 E，结果发现没有找到，这时候只能直接创建新的真实节点 E，插入到第二次创建的 C 节点之后。同时新节点的 startIndex 移动到了 A。旧节点的 startIndex 和 endIndex 都保持不动。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/4b622c0d61673ec5474465d82305d308.png" alt="img"></p>
+<p>第四次循环中，发现了新旧节点的开头(都是 A)相同，于是 diff 后创建了 A 的真实节点，插入到前一次创建的 E 节点后面。同时旧节点的 startIndex 移动到了 B，新节点的 startIndex 移动到了 B。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/5982417c3e0b2fa9ae940354a0e67ab4.png" alt="img"></p>
+<p>第五次循环中，情形同第四次循环一样，因此 diff 后创建了 B 真实节点 插入到前一次创建的 A 节点后面。同时旧节点的 startIndex 移动到了 C，新节点的 startIndex 移动到了 F。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/16cf0ef90f6e19d26c0ddffeca067e86.png" alt="img"></p>
+<p>这时候发现新节点的 startIndex 已经大于 endIndex 了。不再满足循环的条件了。因此结束循环，接下来走后面的逻辑。</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>当 while 循环结束后，根据新老节点的数目不同，做相应的节点添加或者删除。若新节点数目大于老节点则需要把多出来的节点创建出来加入到真实 dom 中，反之若老节点数目大于新节点则需要把多出来的老节点从真实 dom 中删除。至此整个 diff 过程就已经全部完成了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (oldStartIdx &gt; oldEndIdx) &#123;</span><br><span class="line">      <span class="comment">/*全部比较完成以后，发现oldStartIdx &gt; oldEndIdx的话，说明老节点已经遍历完了，新节点比老节点多， 所以这时候多出来的新节点需要一个一个创建出来加入到真实Dom中*/</span></span><br><span class="line">      refElm = isUndef(newCh[newEndIdx + <span class="number">1</span>]) ? <span class="literal">null</span> : newCh[newEndIdx + <span class="number">1</span>].elm</span><br><span class="line">      addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue) <span class="comment">//创建 newStartIdx - newEndIdx 之间的所有节点</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (newStartIdx &gt; newEndIdx) &#123;</span><br><span class="line">      <span class="comment">/*如果全部比较完成以后发现newStartIdx &gt; newEndIdx，则说明新节点已经遍历完了，老节点多于新节点，这个时候需要将多余的老节点从真实Dom中移除*/</span></span><br><span class="line">      removeVnodes(oldCh, oldStartIdx, oldEndIdx) <span class="comment">//移除 oldStartIdx - oldEndIdx 之间的所有节点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>再回过头看我们的实例，新节点的数目大于旧节点，需要创建 newStartIdx 和 newEndIdx 之间的所有节点。在我们的实例中就是节点 F，因此直接创建 F 节点对应的真实节点放到 B 节点后面即可。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2021/12/01/diff%E7%AE%97%E6%B3%95/dc215b45682cf6c9cc4700a5425673ad.png" alt="img"></p>
+<h2 id="3-结尾"><a href="#3-结尾" class="headerlink" title="3. 结尾"></a>3. 结尾</h2><p>最后通过上述的源码和实例的分析，我们完成了 Vue 中 diff 算法的完整解读。如果想要了解更多的 Vue 源码。欢迎进入我们的 github 地址（<a target="_blank" rel="noopener" href="https://github.com/DQFE/vue）进行查看，里面对每一行">https://github.com/DQFE/vue）进行查看，里面对每一行</a> Vue 源码都做了注释，方便大家的理解。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>diff算法</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://wangmou-niubi.github.io/2021/12/01/diff%E7%AE%97%E6%B3%95/">https://wangmou-niubi.github.io/2021/12/01/diff%E7%AE%97%E6%B3%95/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a" style="display: inline-block;width: 120px"><h>作者</h><div class="post-copyright-cc-info"><h>王馨</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>发布于</h><div class="post-copyright-cc-info"><h>2021-12-01</h></div></div><div class="post-copyright-u" style="display: inline-block;width: 120px"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-01-16</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="/cc/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY 4.0" href="/cc/">CC BY 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/64039fd0f144a01007796d4a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.bilicdn.tk/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://ezgx.site/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ezgx.site/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/16/PFM2/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6403a054f144a0100779cd83.jpg" onerror="onerror=null;src='https://ezgx.site/img/404.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">PFM2</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/01/%E9%9B%A8%E6%BB%B4/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64039f54f144a01007791156.jpg" onerror="onerror=null;src='https://ezgx.site/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">雨滴</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="waline-wrap"></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://home.ezgx.site/" title="个人主页"><i class="fa-solid fa-compass"></i></a><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://res.abeim.cn/api/qq/?qq=3387251845" title="联系QQ"><i class="fa-brands fa-qq"></i></a><a class="deal_link" href="/authorwechat/" title="联系微信"><i class="fa-brands fa-weixin"></i></a><img class="footer_mini_logo entered loading" style="border-radius:50%" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><a class="deal_link" target="_blank" rel="noopener external nofollow" href="https://github.com/ezgx" title="Github"><i class="fa-brands fa-github"></i></a><a class="deal_link" href="/comments/" title="留言"><i class="fa-solid fa-comment"></i></a><a class="deal_link" target="_blank" rel="noopener external nofollow" href="mailto:3387251845@qq.com" title="发送邮件"><i class="fa-solid fa-envelope"></i></a></div><div id="Jay-footer"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://home.ezgx.site">个人主页</a><a class="footer-item" href="/about/">关于</a><a class="footer-item" href="/link/">友链</a><a class="footer-item" href="javascript:toRandomPost()">随机文章</a></div></div><div class="footer-group"><h3 class="footer-title">标签</h3><div class="footer-links"><a class="footer-item" href="/tags/%E6%95%99%E7%A8%8B/">📚教程</a><a class="footer-item" href="/categories/butterfly/">🦋魔改教程</a><a class="footer-item" href="/categories/%E5%89%8D%E7%AB%AF/">🌈捣鼓前端</a><a class="footer-item" href="/categories/%E7%94%9F%E6%B4%BB/">📙生活记录</a></div></div><div class="footer-group"><h3 class="footer-title">我的</h3><div class="footer-links"><a class="footer-item" href="/about/">关于</a><a class="footer-item" href="/archives/">归档</a><a class="footer-item" href="/tags/">标签</a><a class="footer-item" href="/categories/">分类</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cc/">版权协议</a><a class="footer-item" target="_blank" rel="noopener" href="https://github.com/Ezgx/hexo-theme-dimension/blob/main/LICENSE">主题协议</a><a class="footer-item" href="javascript:void(0)">占位</a><a class="footer-item" href="javascript:void(0)">占位</a></div></div></div><div id="footer-banner"><div class="footer-banner-links"><div class="footer-banner-left"><div class="footer-banner-left"><div id="footer-banner-tips">2023 ©Echocbx</div></div></div><div class="footer-banner-right"><a class="footer-banner-link" target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo">框架：Hexo</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/2023/dimension" title="theme">主题：dimension</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/about/" title="about">关于</a><a class="footer-banner-link">|</a><a class="footer-banner-link cc" href="/cc/" title="cc协议"><i class="fab fa-creative-commons"></i><span>协议。</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.bilicdn.tk/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.bilicdn.tk/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: 'ap-shanghai',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.bilicdn.tk/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.bilicdn.tk/npm/@waline/client/dist/waline.min.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: '',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.bilicdn.tk/npm/@waline/client/dist/waline.min.js').then(initWaline)
+  }
+}
+
+if ('Twikoo' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.bilicdn.tk/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="欢迎来到,Echocbx的,博客" data-fontsize="16px" data-random="false" async="async"></script><script src="https://cdn.bilicdn.tk/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="hometop.js"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><span id="fps"></span></body></html>
